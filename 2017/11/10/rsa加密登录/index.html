@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="rsa,登录" />
 
 
 
@@ -79,13 +79,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="xiasummer1019的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="整理以前所学想找个地方把学的东西整理一下  为什么不用MD5假设你的初始密码是 123456在前端经过MD5加密之后变成QWEASD传到后台，可能经过其他处理储存到数据库但是一旦中间人看到你的QWEASD并不需要知道你的原密码也能附加一些参数调用相应的接口者并不是我们所希望的  RSA 非对称加密算法阮一峰大神的介绍简单来说就是公钥加密，私钥解密，公钥和私钥不同不过鉴于生成秘钥，加解密的效率过慢">
+<meta name="keywords" content="rsa,登录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rsa加密登录">
+<meta property="og:url" content="http://yoursite.com/2017/11/10/rsa加密登录/index.html">
 <meta property="og:site_name" content="xiasummer1019的博客">
+<meta property="og:description" content="整理以前所学想找个地方把学的东西整理一下  为什么不用MD5假设你的初始密码是 123456在前端经过MD5加密之后变成QWEASD传到后台，可能经过其他处理储存到数据库但是一旦中间人看到你的QWEASD并不需要知道你的原密码也能附加一些参数调用相应的接口者并不是我们所希望的  RSA 非对称加密算法阮一峰大神的介绍简单来说就是公钥加密，私钥解密，公钥和私钥不同不过鉴于生成秘钥，加解密的效率过慢">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/img/rsa-login/rsaflow.jpg">
+<meta property="og:updated_time" content="2017-11-10T07:54:01.555Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xiasummer1019的博客">
+<meta name="twitter:title" content="rsa加密登录">
+<meta name="twitter:description" content="整理以前所学想找个地方把学的东西整理一下  为什么不用MD5假设你的初始密码是 123456在前端经过MD5加密之后变成QWEASD传到后台，可能经过其他处理储存到数据库但是一旦中间人看到你的QWEASD并不需要知道你的原密码也能附加一些参数调用相应的接口者并不是我们所希望的  RSA 非对称加密算法阮一峰大神的介绍简单来说就是公钥加密，私钥解密，公钥和私钥不同不过鉴于生成秘钥，加解密的效率过慢">
+<meta name="twitter:image" content="http://yoursite.com/img/rsa-login/rsaflow.jpg">
 
 
 
@@ -115,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/10/rsa加密登录/"/>
 
 
 
 
 
-  <title>xiasummer1019的博客</title>
+  <title>rsa加密登录 | xiasummer1019的博客</title>
   
 
 
@@ -140,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,9 +230,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -256,9 +262,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/10/rsa加密登录/" itemprop="url">rsa加密登录</a></h1>
+          <h1 class="post-title" itemprop="name headline">rsa加密登录</h1>
         
 
         <div class="post-meta">
@@ -330,9 +334,7 @@
       
 
       
-        
-          
-            <ul>
+        <ul>
 <li><h2 id="整理以前所学"><a href="#整理以前所学" class="headerlink" title="整理以前所学"></a>整理以前所学</h2><p>想找个地方把学的东西整理一下</p>
 </li>
 <li><h2 id="为什么不用MD5"><a href="#为什么不用MD5" class="headerlink" title="为什么不用MD5"></a>为什么不用MD5</h2><p>假设你的初始密码是 <code>123456</code><br>在前端经过MD5加密之后变成<code>QWEASD</code><br>传到后台，可能经过其他处理储存到数据库<br>但是一旦中间人看到你的<code>QWEASD</code><br>并不需要知道你的原密码也能附加一些参数调用相应的接口<br>者并不是我们所希望的</p>
@@ -360,8 +362,6 @@
 </li>
 </ul>
 
-          
-        
       
     </div>
     
@@ -376,219 +376,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/09/github-hexo-Blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiasummer1019的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/09/github-hexo-Blog/" itemprop="url">github hexo Blog</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-09T16:37:38+08:00">
-                2017-11-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo教程/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo教程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/RSA，LOGIN/" rel="tag"># RSA，LOGIN</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>1.github账号（必须，没有其他的也能建一个简单的首页）<br>2.node.js的<a href="https://nodejs.org/en/" target="_blank" rel="external">安装包</a><br>3.git的<a href="https://github.com/git-for-windows/git" target="_blank" rel="external">安装包</a><br>4.开始安装吧。</p>
-</li>
-<li><h2 id="关于hexo-和-jekyll"><a href="#关于hexo-和-jekyll" class="headerlink" title="关于hexo 和 jekyll"></a>关于hexo 和 jekyll</h2><p>主要是jekyll需要配置的文件有点多，我个人也比较菜（lan），之前的jekyll虽然成功了，但是操作步骤还是挺多的。。</p>
-</li>
-<li><h2 id="github配置blog"><a href="#github配置blog" class="headerlink" title="github配置blog"></a>github配置blog</h2></li>
-</ul>
-<ol>
-<li>新建一个和你的用户名相同的名字，用来当做域名{youName}.github.io,格式不限<br><img src="/img/hexo/newblog.jpg" alt="新建一个仓库"></li>
-<li>添加你的仓库配置文件，随便选一个就好，我java用的多就选了java</li>
-<li>证书，选Apache2.0吧</li>
-<li>忽略我的io1中的1，选择设置<br><img src="/img/hexo/gitbubSetting.jpg" alt="设置"><br><img src="/img/hexo/master.jpg" alt="分支"></li>
-<li>选择master分支，选择主题<br><img src="/img/hexo/defaultTheme.jpg" alt="主题"></li>
-<li>随便选一个吧<br><img src="/img/hexo/themeChoose.jpg" alt="主题"></li>
-<li>成功<br><img src="/img/hexo/githubOk.jpg" alt="成功"></li>
-<li>添加一个readme并且添加index.html(默认首页名)<br><img src="/img/hexo/readme.jpg" alt="readme"><br><img src="/img/hexo/hellowworld.jpg" alt="hellowworld"><br>9.成功<br><img src="/img/hexo/success.jpg" alt="success"><br>这样你可以访问你的博客了！地址是{youName}.github.io</li>
-</ol>
-<ul>
-<li><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2></li>
-</ul>
-<ol>
-<li><p>默认你的git和nodejs已经安装好了<br>cmd查询一下你的版本</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">WINDOWS</span>\<span class="title">system32</span>&gt;<span class="title">git</span> --<span class="title">version</span></span></span><br><span class="line"><span class="function"><span class="title">git</span> <span class="title">version</span> 2.15.0.<span class="title">windows</span>.1</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">WINDOWS</span>\<span class="title">system32</span>&gt;<span class="title">node</span> -<span class="title">v</span></span></span><br><span class="line"><span class="function"><span class="title">v8</span>.9.1</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在空白处右击选择<em>Git Bash Here</em>，打开npm界面（这个终端的剪贴快捷键是shift+ins）<br><img src="/img/hexo/npm.jpg" alt="npm"></p>
-</li>
-<li>安装hexo(可能需要梯子)<br><code>npm install -g hexo</code></li>
-</ol>
-<p>安装的时候可能会没有反应，等等就好了，也可以考虑换源，不过博主等了几分钟，看了会视频就好了</p>
-<ol>
-<li><p>依赖，插件什么的统统装上吧,下面两个是主要的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>建一个blog的文件夹，右击打开npm,”$” 已经存在</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br><span class="line">$ hexo g    #编译静态文件</span><br><span class="line">$ hexo s    #打开服务器</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><img src="/img/hexo/hexos.jpg" alt="hexos"></p>
-<ol>
-<li>打开<a href="http://localhost:4000" target="_blank" rel="external">localhost:4000</a></li>
-</ol>
-<ul>
-<li><h2 id="发布到github"><a href="#发布到github" class="headerlink" title="发布到github"></a>发布到github</h2></li>
-</ul>
-<ol>
-<li>查看有没有rsa（非对称加密）文件<br><img src="/img/hexo/rsalist.jpg" alt="rsalist"><br>这是博主的文件列表，没有的话执行下面的语句，your_email@example.com代表你注册github的邮箱<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>后面统统先回车就好了，密码什么的可以为空。<br>创建好了之后到你的C:\Users{yourName}.ssh文件夹下面去找到id_rsa.pub<br>复制好公钥，前面的ssh-rsa需要一起复制（最后的邮箱不需要）</p>
-<ol>
-<li><p>打开setting<br><img src="/img/hexo/setting.jpg" alt="setting"><br>选择SSH and GPG keys，新建ssh key，title随便填，Key填上一步复制的内容<br><img src="/img/hexo/setting.jpg" alt="settingdetail"></p>
-</li>
-<li><p>执行<code>ssh -T git@github.com</code>,等会让你选择yes/no,直接填yes回车。<br>等到显示<br><code>Hi xiasummer1019! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code>就成功了</p>
-</li>
-<li><p>修改blog文件夹下面的_config.yml文件，拉到下面修改为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/xiasummer1019/xiasummer1019.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>最后执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<p>等会可能需要你输入github的用户名，最后就可以了。<br>要是你的浏览器没有显示，换个试试或者隐身模式。</p>
-<h2 id="其他的需要的文档"><a href="#其他的需要的文档" class="headerlink" title="其他的需要的文档"></a>其他的需要的文档</h2><p><a href="https://segmentfault.com/a/1190000002632530" target="_blank" rel="external">hexo语法说明</a><br><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">Markdown 语法说明</a></p>
-<blockquote>
-<p>文章参考<br><a href="https://www.cnblogs.com/liulangmao/p/4323064.html" target="_blank" rel="external">https://www.cnblogs.com/liulangmao/p/4323064.html</a></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/09/github-hexo-Blog/" rel="next" title="github hexo Blog">
+                <i class="fa fa-chevron-left"></i> github hexo Blog
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -598,10 +415,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -609,6 +427,8 @@
 
 
           
+  
+
 
         </div>
         
@@ -629,8 +449,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -692,6 +521,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#整理以前所学"><span class="nav-number">1.</span> <span class="nav-text">整理以前所学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么不用MD5"><span class="nav-number">2.</span> <span class="nav-text">为什么不用MD5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RSA-非对称加密算法"><span class="nav-number">3.</span> <span class="nav-text">RSA 非对称加密算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程"><span class="nav-number">4.</span> <span class="nav-text">流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RSA初始化"><span class="nav-number">5.</span> <span class="nav-text">RSA初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加密"><span class="nav-number">6.</span> <span class="nav-text">加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解密"><span class="nav-number">7.</span> <span class="nav-text">解密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后续"><span class="nav-number">8.</span> <span class="nav-text">后续</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -811,6 +656,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
