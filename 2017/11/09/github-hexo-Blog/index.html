@@ -97,7 +97,11 @@
 <meta property="og:image" content="http://yoursite.com/img/hexo/hellowworld.jpg">
 <meta property="og:image" content="http://yoursite.com/img/hexo/success.jpg">
 <meta property="og:image" content="http://yoursite.com/img/hexo/npm.jpg">
-<meta property="og:updated_time" content="2017-11-10T02:43:32.205Z">
+<meta property="og:image" content="http://yoursite.com/img/hexo/hexos.jpg">
+<meta property="og:image" content="http://yoursite.com/img/hexo/rsalist.jpg">
+<meta property="og:image" content="http://yoursite.com/img/hexo/setting.jpg">
+<meta property="og:image" content="http://yoursite.com/img/hexo/setting.jpg">
+<meta property="og:updated_time" content="2017-11-10T02:49:17.702Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github hexo Blog">
 <meta name="twitter:description" content="准备工作1.github账号（必须，没有其他的也能建一个简单的首页）2.node.js的安装包3.git的安装包4.开始安装吧。  关于hexo 和 jekyll主要是jekyll需要配置的文件有点多，我个人也比较菜（lan），之前的jekyll虽然成功了，但是操作步骤还是挺多的。。  github配置blog   新建一个和你的用户名相同的名字，用来当做域名{youName}.github.i">
@@ -369,16 +373,40 @@
 </li>
 <li><p>在空白处右击选择<em>Git Bash Here</em>，打开npm界面（这个终端的剪贴快捷键是shift+ins）<br><img src="/img/hexo/npm.jpg" alt="npm"></p>
 </li>
-<li>安装hexo(可能需要梯子)<br><code>npm install -g hexo</code><br>安装的时候可能会没有反应，等等就好了，也可以考虑换源，不过博主等了几分钟，看了会视频就好了</li>
+<li>安装hexo(可能需要梯子)<br><code>npm install -g hexo</code></li>
+</ol>
+<p>安装的时候可能会没有反应，等等就好了，也可以考虑换源，不过博主等了几分钟，看了会视频就好了</p>
+<ol>
 <li><p>依赖，插件什么的统统装上吧,下面两个是主要的</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>建一个blog的文件夹，右击打开npm,”$” 已经存在</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br><span class="line">$ hexo g    #编译静态文件</span><br><span class="line">$ hexo s    #打开服务器</span><br><span class="line">``` </span><br><span class="line">![hexos](/img/hexo/hexos.jpg)</span><br><span class="line"></span><br><span class="line">6. 打开[localhost:4000](http://localhost:4000)</span><br><span class="line"></span><br><span class="line">* ## 发布到github</span><br><span class="line">1. 查看有没有rsa（非对称加密）文件</span><br><span class="line">![rsalist](/img/hexo/rsalist.jpg)</span><br><span class="line">这是博主的文件列表，没有的话执行下面的语句，your_email@example.com代表你注册github的邮箱</span><br><span class="line">``` </span><br><span class="line">$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</span><br><span class="line">``` </span><br><span class="line">后面统统先回车就好了，密码什么的可以为空。</span><br><span class="line">创建好了之后到你的C:\Users\&#123;yourName&#125;\.ssh文件夹下面去找到id_rsa.pub</span><br><span class="line">复制好公钥，前面的ssh-rsa需要一起复制（最后的邮箱不需要）</span><br><span class="line"></span><br><span class="line">2. 打开setting</span><br><span class="line">![setting](/img/hexo/setting.jpg)</span><br><span class="line">选择SSH and GPG keys，新建ssh key，title随便填，Key填上一步复制的内容</span><br><span class="line">![settingdetail](/img/hexo/setting.jpg)</span><br><span class="line"></span><br><span class="line">3. 执行``ssh -T git@github.com``,等会让你选择yes/no,直接填yes回车。</span><br><span class="line">等到显示</span><br><span class="line">``Hi xiasummer1019! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br><span class="line">``就成功了</span><br><span class="line"></span><br><span class="line">4. 修改blog文件夹下面的_config.yml文件，拉到下面修改为：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br><span class="line">$ hexo g    #编译静态文件</span><br><span class="line">$ hexo s    #打开服务器</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>deploy:<br>  type: git<br>  repo: <a href="https://github.com/xiasummer1019/xiasummer1019.github.io" target="_blank" rel="external">https://github.com/xiasummer1019/xiasummer1019.github.io</a><br>  branch: master<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">最后执行</span><br></pre></td></tr></table></figure></p>
-<p>hexo g<br>hexo d<br>```<br>等会可能需要你输入github的用户名，最后就可以了。<br>要是你的浏览器没有显示，换个试试或者隐身模式。</p>
+<p><img src="/img/hexo/hexos.jpg" alt="hexos"></p>
+<ol>
+<li>打开<a href="http://localhost:4000" target="_blank" rel="external">localhost:4000</a></li>
+</ol>
+<ul>
+<li><h2 id="发布到github"><a href="#发布到github" class="headerlink" title="发布到github"></a>发布到github</h2></li>
+</ul>
+<ol>
+<li>查看有没有rsa（非对称加密）文件<br><img src="/img/hexo/rsalist.jpg" alt="rsalist"><br>这是博主的文件列表，没有的话执行下面的语句，your_email@example.com代表你注册github的邮箱<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>后面统统先回车就好了，密码什么的可以为空。<br>创建好了之后到你的C:\Users{yourName}.ssh文件夹下面去找到id_rsa.pub<br>复制好公钥，前面的ssh-rsa需要一起复制（最后的邮箱不需要）</p>
+<ol>
+<li><p>打开setting<br><img src="/img/hexo/setting.jpg" alt="setting"><br>选择SSH and GPG keys，新建ssh key，title随便填，Key填上一步复制的内容<br><img src="/img/hexo/setting.jpg" alt="settingdetail"></p>
+</li>
+<li><p>执行<code>ssh -T git@github.com</code>,等会让你选择yes/no,直接填yes回车。<br>等到显示<br><code>Hi xiasummer1019! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code>就成功了</p>
+</li>
+<li><p>修改blog文件夹下面的_config.yml文件，拉到下面修改为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/xiasummer1019/xiasummer1019.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>最后执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
+<p>等会可能需要你输入github的用户名，最后就可以了。<br>要是你的浏览器没有显示，换个试试或者隐身模式。</p>
 <p>#其他的需要的文档<br><a href="https://segmentfault.com/a/1190000002632530" target="_blank" rel="external">hexo语法说明</a><br><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">Markdown 语法说明</a></p>
 
       
@@ -534,7 +562,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于hexo-和-jekyll"><span class="nav-number">2.</span> <span class="nav-text">关于hexo 和 jekyll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github配置blog"><span class="nav-number">3.</span> <span class="nav-text">github配置blog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo"><span class="nav-number">4.</span> <span class="nav-text">安装hexo</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于hexo-和-jekyll"><span class="nav-number">2.</span> <span class="nav-text">关于hexo 和 jekyll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github配置blog"><span class="nav-number">3.</span> <span class="nav-text">github配置blog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo"><span class="nav-number">4.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布到github"><span class="nav-number">5.</span> <span class="nav-text">发布到github</span></a></li></ol></div>
             
 
           </div>
