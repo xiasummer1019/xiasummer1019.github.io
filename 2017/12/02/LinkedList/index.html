@@ -95,7 +95,7 @@
 <meta property="og:image" content="http://yoursite.com/img/2017-12/linkedlist/add.jpg">
 <meta property="og:image" content="http://yoursite.com/img/2017-12/linkedlist/remove.jpg">
 <meta property="og:image" content="http://yoursite.com/img/2017-12/linkedlist/unlink.jpg">
-<meta property="og:updated_time" content="2017-12-13T08:42:55.789Z">
+<meta property="og:updated_time" content="2017-12-13T08:45:48.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LinkedList">
 <meta name="twitter:description" content="LinkedList JDK1.8 另一个动态的“数组”jdk是最好的老师 链表，循环链表，双向链表什么是链表？一般来说一个简单的数组为：Car[] car = new Car[5] ;那么在堆内存中他们的内存地址一般是连续的：但是如果随机创建了Car car0,car1,…car4这些对象，那么怎么样将他们串联起来呢？1234public Car &amp;#123;    public String">
@@ -371,7 +371,7 @@
 <p>双向链表比单链表多了一个指向前一个位置的地址，这就是典型的空间换取时间的例子了。</p>
 <h3 id="set方法"><a href="#set方法" class="headerlink" title="set方法"></a>set方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public E set(int index, E element) &#123;</span><br><span class="line">    checkElementIndex(index);</span><br><span class="line">    Node&lt;E&gt; x = node(index);//上面的node方法获取修改的值</span><br><span class="line">    E oldVal = x.item;</span><br><span class="line">    x.item = element;</span><br><span class="line">    return oldVal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>既然执行了node方法，也是一个一个的节点找下去了。<br>这也就是为什么LinkedList为什么在读取和修改的时候效率比较差的原因了。</p>
-<p>##LinkedList的优点<br>除了自己插入的null对象外，LinkedList不会存在浪费空间的现象，相对于ArrayList的数组需要不断的扩容，LinkedList只需要花费少量创建Node对象的内存，就可以扩展下去。<br>插入和删除非常的方便，操作的对象最多也就是3个Node节点，相对于数组的内存复制，速度是要快的多了。</p>
+<h2 id="LinkedList的优点"><a href="#LinkedList的优点" class="headerlink" title="LinkedList的优点"></a>LinkedList的优点</h2><p>除了自己插入的null对象外，LinkedList不会存在浪费空间的现象，相对于ArrayList的数组需要不断的扩容，LinkedList只需要花费少量创建Node对象的内存，就可以扩展下去。<br>插入和删除非常的方便，操作的对象最多也就是3个Node节点，相对于数组的内存复制，速度是要快的多了。</p>
 
       
     </div>
@@ -542,7 +542,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LinkedList-JDK1-8-另一个动态的“数组”"><span class="nav-number">1.</span> <span class="nav-text">LinkedList JDK1.8 另一个动态的“数组”</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#链表，循环链表，双向链表"><span class="nav-number">1.1.</span> <span class="nav-text">链表，循环链表，双向链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是链表？"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是链表？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LinkedList的初始化"><span class="nav-number">1.2.</span> <span class="nav-text">LinkedList的初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#add方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">add方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#remove方法"><span class="nav-number">1.2.2.</span> <span class="nav-text">remove方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get方法"><span class="nav-number">1.2.3.</span> <span class="nav-text">get方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set方法"><span class="nav-number">1.2.4.</span> <span class="nav-text">set方法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LinkedList-JDK1-8-另一个动态的“数组”"><span class="nav-number">1.</span> <span class="nav-text">LinkedList JDK1.8 另一个动态的“数组”</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#链表，循环链表，双向链表"><span class="nav-number">1.1.</span> <span class="nav-text">链表，循环链表，双向链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是链表？"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是链表？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LinkedList的初始化"><span class="nav-number">1.2.</span> <span class="nav-text">LinkedList的初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#add方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">add方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#remove方法"><span class="nav-number">1.2.2.</span> <span class="nav-text">remove方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get方法"><span class="nav-number">1.2.3.</span> <span class="nav-text">get方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set方法"><span class="nav-number">1.2.4.</span> <span class="nav-text">set方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LinkedList的优点"><span class="nav-number">1.3.</span> <span class="nav-text">LinkedList的优点</span></a></li></ol></li></ol></div>
             
 
           </div>
