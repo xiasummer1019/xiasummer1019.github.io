@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="HashMap JDK1.8  集合类jdk是最好的老师 Mapmap就是键值对，一个key对应一个value；key1——–value1key2——–value2key3——–value3 HashMap 初始化12Map map = new HashMap();map.put(&amp;quot;ABCD&amp;quot;,&amp;quot;123&amp;quot;); 像前面list一样，先看初始化：123publi">
+<meta name="description" content="HashMap JDK1.8  集合类jdk是最好的老师 Mapmap就是键值对，一个key对应一个value；key1——–value1key2——–value2key3——–value3">
 <meta name="keywords" content="jdk,HashMap">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hashmap">
 <meta property="og:url" content="http://yoursite.com/2017/12/20/HashMap/index.html">
 <meta property="og:site_name" content="xiasummer1019的博客">
-<meta property="og:description" content="HashMap JDK1.8  集合类jdk是最好的老师 Mapmap就是键值对，一个key对应一个value；key1——–value1key2——–value2key3——–value3 HashMap 初始化12Map map = new HashMap();map.put(&amp;quot;ABCD&amp;quot;,&amp;quot;123&amp;quot;); 像前面list一样，先看初始化：123publi">
+<meta property="og:description" content="HashMap JDK1.8  集合类jdk是最好的老师 Mapmap就是键值对，一个key对应一个value；key1——–value1key2——–value2key3——–value3">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/img/2017-12/hashmap/putVal.jpg">
 <meta property="og:image" content="http://yoursite.com/img/2017-12/hashmap/firstAdd.jpg">
@@ -93,10 +93,10 @@
 <meta property="og:image" content="http://yoursite.com/img/2017-12/hashmap/secondAdd.jpg">
 <meta property="og:image" content="http://yoursite.com/img/2017-12/hashmap/in8.jpg">
 <meta property="og:image" content="http://yoursite.com/img/2017-12/hashmap/over8.jpg">
-<meta property="og:updated_time" content="2017-12-25T08:23:56.382Z">
+<meta property="og:updated_time" content="2018-10-11T06:51:52.967Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hashmap">
-<meta name="twitter:description" content="HashMap JDK1.8  集合类jdk是最好的老师 Mapmap就是键值对，一个key对应一个value；key1——–value1key2——–value2key3——–value3 HashMap 初始化12Map map = new HashMap();map.put(&amp;quot;ABCD&amp;quot;,&amp;quot;123&amp;quot;); 像前面list一样，先看初始化：123publi">
+<meta name="twitter:description" content="HashMap JDK1.8  集合类jdk是最好的老师 Mapmap就是键值对，一个key对应一个value；key1——–value1key2——–value2key3——–value3">
 <meta name="twitter:image" content="http://yoursite.com/img/2017-12/hashmap/putVal.jpg">
 
 
@@ -351,6 +351,7 @@
       
         <h1 id="HashMap-JDK1-8-集合类"><a href="#HashMap-JDK1-8-集合类" class="headerlink" title="HashMap JDK1.8  集合类"></a>HashMap JDK1.8  集合类</h1><p>jdk是最好的老师</p>
 <h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>map就是键值对，一个key对应一个value；<br>key1——–value1<br>key2——–value2<br>key3——–value3</p>
+<a id="more"></a> 
 <h2 id="HashMap-初始化"><a href="#HashMap-初始化" class="headerlink" title="HashMap 初始化"></a>HashMap 初始化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Map map = new HashMap();</span><br><span class="line">map.put(&quot;ABCD&quot;,&quot;123&quot;);</span><br></pre></td></tr></table></figure>
 <p>像前面list一样，先看初始化：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public HashMap() &#123;</span><br><span class="line">    this.loadFactor = DEFAULT_LOAD_FACTOR; // all other fields defaulted</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>就是初始化了一个加载因子，这个是用来HashMap扩容用的，后会有详细介绍：<br><code>static final float DEFAULT_LOAD_FACTOR = 0.75f;</code><br>其他就没有了，那就还是老套路，在添加元素的时候初始化了。<br>在这之前先看看有哪些属性：<br><code>transient Node&lt;K,V&gt;[] table;</code><br>熟悉的数组，说明HashMap在内部的样子就是个数组。暂时还未指定大小。</p>
@@ -403,6 +404,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/11/es-oom/" rel="prev" title="es_oom">
+                es_oom <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -477,7 +482,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -488,7 +493,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -499,7 +504,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -554,7 +559,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

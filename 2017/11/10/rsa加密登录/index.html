@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="整理以前所学想找个地方把学的东西整理一下  为什么不用MD5假设你的初始密码是 123456在前端经过MD5加密之后变成QWEASD传到后台，可能经过其他处理储存到数据库但是一旦中间人看到你的QWEASD并不需要知道你的原密码也能附加一些参数调用相应的接口者并不是我们所希望的  RSA 非对称加密算法阮一峰大神的介绍简单来说就是公钥加密，私钥解密，公钥和私钥不同不过鉴于生成秘钥，加解密的效率过慢">
+<meta name="description" content="整理以前所学想找个地方把学的东西整理一下  为什么不用MD5Md5是数字签名，基本不可逆。假设你的初始密码是 123456在前端经过MD5加密之后变成QWEASD传到后台，可能经过其他处理储存到数据库但是一旦中间人看到你的QWEASD并不需要知道你的原密码也能附加一些参数调用相应的接口者并不是我们所希望的  RSA 非对称加密算法阮一峰大神的介绍简单来说就是公钥加密，私钥解密，公钥和私钥不同不过">
 <meta name="keywords" content="rsa,登录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="rsa加密登录">
 <meta property="og:url" content="http://yoursite.com/2017/11/10/rsa加密登录/index.html">
 <meta property="og:site_name" content="xiasummer1019的博客">
-<meta property="og:description" content="整理以前所学想找个地方把学的东西整理一下  为什么不用MD5假设你的初始密码是 123456在前端经过MD5加密之后变成QWEASD传到后台，可能经过其他处理储存到数据库但是一旦中间人看到你的QWEASD并不需要知道你的原密码也能附加一些参数调用相应的接口者并不是我们所希望的  RSA 非对称加密算法阮一峰大神的介绍简单来说就是公钥加密，私钥解密，公钥和私钥不同不过鉴于生成秘钥，加解密的效率过慢">
+<meta property="og:description" content="整理以前所学想找个地方把学的东西整理一下  为什么不用MD5Md5是数字签名，基本不可逆。假设你的初始密码是 123456在前端经过MD5加密之后变成QWEASD传到后台，可能经过其他处理储存到数据库但是一旦中间人看到你的QWEASD并不需要知道你的原密码也能附加一些参数调用相应的接口者并不是我们所希望的  RSA 非对称加密算法阮一峰大神的介绍简单来说就是公钥加密，私钥解密，公钥和私钥不同不过">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/img/rsa-login/rsaflow.jpg">
-<meta property="og:updated_time" content="2017-11-10T07:55:53.132Z">
+<meta property="og:updated_time" content="2018-10-11T06:54:44.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rsa加密登录">
-<meta name="twitter:description" content="整理以前所学想找个地方把学的东西整理一下  为什么不用MD5假设你的初始密码是 123456在前端经过MD5加密之后变成QWEASD传到后台，可能经过其他处理储存到数据库但是一旦中间人看到你的QWEASD并不需要知道你的原密码也能附加一些参数调用相应的接口者并不是我们所希望的  RSA 非对称加密算法阮一峰大神的介绍简单来说就是公钥加密，私钥解密，公钥和私钥不同不过鉴于生成秘钥，加解密的效率过慢">
+<meta name="twitter:description" content="整理以前所学想找个地方把学的东西整理一下  为什么不用MD5Md5是数字签名，基本不可逆。假设你的初始密码是 123456在前端经过MD5加密之后变成QWEASD传到后台，可能经过其他处理储存到数据库但是一旦中间人看到你的QWEASD并不需要知道你的原密码也能附加一些参数调用相应的接口者并不是我们所希望的  RSA 非对称加密算法阮一峰大神的介绍简单来说就是公钥加密，私钥解密，公钥和私钥不同不过">
 <meta name="twitter:image" content="http://yoursite.com/img/rsa-login/rsaflow.jpg">
 
 
@@ -347,10 +347,10 @@
         <ul>
 <li><h2 id="整理以前所学"><a href="#整理以前所学" class="headerlink" title="整理以前所学"></a>整理以前所学</h2><p>想找个地方把学的东西整理一下</p>
 </li>
-<li><h2 id="为什么不用MD5"><a href="#为什么不用MD5" class="headerlink" title="为什么不用MD5"></a>为什么不用MD5</h2><p>假设你的初始密码是 <code>123456</code><br>在前端经过MD5加密之后变成<code>QWEASD</code><br>传到后台，可能经过其他处理储存到数据库<br>但是一旦中间人看到你的<code>QWEASD</code><br>并不需要知道你的原密码也能附加一些参数调用相应的接口<br>者并不是我们所希望的</p>
+<li><h2 id="为什么不用MD5"><a href="#为什么不用MD5" class="headerlink" title="为什么不用MD5"></a>为什么不用MD5</h2><p>Md5是数字签名，基本不可逆。<br>假设你的初始密码是 <code>123456</code><br>在前端经过MD5加密之后变成<code>QWEASD</code><br>传到后台，可能经过其他处理储存到数据库<br>但是一旦中间人看到你的<code>QWEASD</code><br>并不需要知道你的原密码也能附加一些参数调用相应的接口<br>者并不是我们所希望的</p>
 </li>
 <li><h2 id="RSA-非对称加密算法"><a href="#RSA-非对称加密算法" class="headerlink" title="RSA 非对称加密算法"></a>RSA 非对称加密算法</h2><p><a href="http://www.ruanyifeng.com/blog/2013/06/rsa_algorithm_part_one.html" target="_blank" rel="external">阮一峰</a>大神的介绍<br>简单来说就是公钥加密，私钥解密，公钥和私钥不同<br>不过鉴于生成秘钥，加解密的效率过慢，只能用于少量的数据，所以用于密码传输正合适</p>
-</li>
+<a id="more"></a> </li>
 <li><h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p>感谢顾童鞋给我画的图！<br><img src="/img/rsa-login/rsaflow.jpg" alt="rsaflow.jpg"></p>
 </li>
 <li><h2 id="RSA初始化"><a href="#RSA初始化" class="headerlink" title="RSA初始化"></a>RSA初始化</h2><p>Java代码：初始化RSA并存入session中</p>
@@ -488,7 +488,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -499,7 +499,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -510,7 +510,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -565,7 +565,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

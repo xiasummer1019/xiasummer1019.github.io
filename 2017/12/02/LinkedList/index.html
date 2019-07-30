@@ -95,7 +95,7 @@
 <meta property="og:image" content="http://yoursite.com/img/2017-12/linkedlist/add.jpg">
 <meta property="og:image" content="http://yoursite.com/img/2017-12/linkedlist/remove.jpg">
 <meta property="og:image" content="http://yoursite.com/img/2017-12/linkedlist/unlink.jpg">
-<meta property="og:updated_time" content="2017-12-13T08:45:48.360Z">
+<meta property="og:updated_time" content="2018-10-11T06:54:19.133Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LinkedList">
 <meta name="twitter:description" content="LinkedList JDK1.8 另一个动态的“数组”jdk是最好的老师 链表，循环链表，双向链表什么是链表？一般来说一个简单的数组为：Car[] car = new Car[5] ;那么在堆内存中他们的内存地址一般是连续的：但是如果随机创建了Car car0,car1,…car4这些对象，那么怎么样将他们串联起来呢？1234public Car &amp;#123;    public String">
@@ -356,7 +356,7 @@
 <p><img src="/img/2017-12/linkedlist/singleLink.jpg" alt="单链表"><br>这就是一个单向链表，在单向链表中知道第一个对象，就可以找到下面一个对象，以此类推，直到最后一个元素。</p>
 <p>单项循环链表就是将最后一位car4的next指向第一位，即car4.next = car0;这样就形成了一个循环，只要知道其中任何一个元素，就可以了解整个循环过程<br><img src="/img/2017-12/linkedlist/circycleLink.jpg" alt="单项循环链表"><br>下面双向链表：这个就是LinkedList所用到的结构，相比之下多了一个存放上个节点的地址<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public Car &#123;</span><br><span class="line">    public String Name;</span><br><span class="line">    public Car next;//指向下一个节点</span><br><span class="line">    public Car prev;//指向上一个节点</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><img src="/img/2017-12/linkedlist/doublelist.jpg" alt="双向链表"></p>
-<p>最后是双向循环链表，和单项的类似<br><img src="/img/2017-12/linkedlist/doubleCycleList.jpg" alt="双向循环链表"></p>
+<p>最后是双向循环链表，和单项的类似<br><img src="/img/2017-12/linkedlist/doubleCycleList.jpg" alt="双向循环链表"><br><a id="more"></a> </p>
 <h2 id="LinkedList的初始化"><a href="#LinkedList的初始化" class="headerlink" title="LinkedList的初始化"></a>LinkedList的初始化</h2><p>相对与ArrayList,LinkedList的构造函数少的可怜，除了将带Collection参数的构造函数外，主要的就是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Constructs an empty list.</span><br><span class="line"> */</span><br><span class="line">public LinkedList() &#123;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>那为什么只是空的构造函数呢？只好来看看成员变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">transient int size = 0;</span><br><span class="line">/**</span><br><span class="line"> * Pointer to first node.</span><br><span class="line"> * Invariant: (first == null &amp;&amp; last == null) ||</span><br><span class="line"> *            (first.prev == null &amp;&amp; first.item != null)</span><br><span class="line"> */</span><br><span class="line">transient Node&lt;E&gt; first;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Pointer to last node.</span><br><span class="line"> * Invariant: (first == null &amp;&amp; last == null) ||</span><br><span class="line"> *            (last.next == null &amp;&amp; last.item != null)</span><br><span class="line"> */</span><br><span class="line">transient Node&lt;E&gt; last;</span><br></pre></td></tr></table></figure></p>
 <p>主要就这三个对象,长度size，第一个节点first，最后一个节点last，其他就没有了，int是基础数据类型，那么“猫腻”就在Node对象里了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">private static class Node&lt;E&gt; &#123;</span><br><span class="line">    E item;</span><br><span class="line">    Node&lt;E&gt; next;</span><br><span class="line">    Node&lt;E&gt; prev;</span><br><span class="line"></span><br><span class="line">    Node(Node&lt;E&gt; prev, E element, Node&lt;E&gt; next) &#123;</span><br><span class="line">        this.item = element;</span><br><span class="line">        this.next = next;</span><br><span class="line">        this.prev = prev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -489,7 +489,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -500,7 +500,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -511,7 +511,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -566,7 +566,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
