@@ -249,6 +249,173 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/es-manage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiasummer1019的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/20/es-manage/" itemprop="url">es template</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T12:00:28+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/elasticsearch/" itemprop="url" rel="index">
+                    <span itemprop="name">elasticsearch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="elasticsearch-管理规范（管理员）："><a href="#elasticsearch-管理规范（管理员）：" class="headerlink" title="elasticsearch 管理规范（管理员）："></a>elasticsearch 管理规范（管理员）：</h1><h2 id="初始化操作："><a href="#初始化操作：" class="headerlink" title="初始化操作："></a>初始化操作：</h2><h3 id="限制模板："><a href="#限制模板：" class="headerlink" title="限制模板："></a>限制模板：</h3><p>默认分片数1，从分片数1，<br><br>禁止一切动态模板，禁止全局字段查询，禁止_source字段。<br><br>该模板用于限制<font color="red"><em>未经注册</em></font>索引。</p>
+<pre><code>put /_template/template_limit
+{     
+  &quot;template&quot;: &quot;*&quot;,
+  &quot;settings&quot;: {
+    &quot;index.mapper.dynamic&quot; : false, //用来设置是否可以动态生成type，为了后期升级高版本默认不开放此数据
+    &quot;number_of_shards&quot;: 1,
+    &quot;number_of_replicas&quot;: 1,
+    &quot;refresh_interval&quot;: &quot;5s&quot;        
+  },
+  &quot;mappings&quot;: {
+    &quot;_default_&quot;: {
+      &quot;_all&quot;: {
+        &quot;enabled&quot;: false //_all字段默认不用
+      },
+      &quot;_source&quot;: {
+        &quot;enabled&quot;: false //_source字段默认不用
+      }
+    }
+  }
+}
+</code></pre>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/20/es-manage/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/es-oom/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1322,7 +1489,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
