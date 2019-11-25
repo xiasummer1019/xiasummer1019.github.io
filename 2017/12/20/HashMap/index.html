@@ -1,137 +1,83 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="xiasummer1019的博客" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="jdk,HashMap" />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="HashMap JDK1.8  集合类jdk是最好的老师 Mapmap就是键值对，一个key对应一个value；key1——–value1key2——–value2key3——–value3">
-<meta name="keywords" content="jdk,HashMap">
-<meta property="og:type" content="article">
-<meta property="og:title" content="hashmap">
-<meta property="og:url" content="http://yoursite.com/2017/12/20/HashMap/index.html">
-<meta property="og:site_name" content="xiasummer1019的博客">
-<meta property="og:description" content="HashMap JDK1.8  集合类jdk是最好的老师 Mapmap就是键值对，一个key对应一个value；key1——–value1key2——–value2key3——–value3">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/img/2017-12/hashmap/putVal.jpg">
-<meta property="og:image" content="http://yoursite.com/img/2017-12/hashmap/firstAdd.jpg">
-<meta property="og:image" content="http://yoursite.com/img/2017-12/hashmap/add.jpg">
-<meta property="og:image" content="http://yoursite.com/img/2017-12/hashmap/secondAdd.jpg">
-<meta property="og:image" content="http://yoursite.com/img/2017-12/hashmap/in8.jpg">
-<meta property="og:image" content="http://yoursite.com/img/2017-12/hashmap/over8.jpg">
-<meta property="og:updated_time" content="2018-10-11T06:51:52.967Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hashmap">
-<meta name="twitter:description" content="HashMap JDK1.8  集合类jdk是最好的老师 Mapmap就是键值对，一个key对应一个value；key1——–value1key2——–value2key3——–value3">
-<meta name="twitter:image" content="http://yoursite.com/img/2017-12/hashmap/putVal.jpg">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    hostname: new URL('https://xiasummer1019.github.io').hostname,
     root: '/',
-    scheme: 'Muse',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
+    scheme: 'Mist',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
     algolia: {
-      applicationID: '',
+      appID: '',
       apiKey: '',
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
   };
 </script>
 
+  <meta name="description" content="HashMap JDK1.8  集合类jdk是最好的老师 Mapmap就是键值对，一个key对应一个value；key1——–value1key2——–value2key3——–value3">
+<meta name="keywords" content="jdk,HashMap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hashmap">
+<meta property="og:url" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;2017&#x2F;12&#x2F;20&#x2F;HashMap&#x2F;index.html">
+<meta property="og:site_name" content="xiasummer1019的博客">
+<meta property="og:description" content="HashMap JDK1.8  集合类jdk是最好的老师 Mapmap就是键值对，一个key对应一个value；key1——–value1key2——–value2key3——–value3">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2017-12&#x2F;hashmap&#x2F;putVal.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2017-12&#x2F;hashmap&#x2F;firstAdd.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2017-12&#x2F;hashmap&#x2F;add.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2017-12&#x2F;hashmap&#x2F;secondAdd.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2017-12&#x2F;hashmap&#x2F;in8.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2017-12&#x2F;hashmap&#x2F;over8.jpg">
+<meta property="og:updated_time" content="2018-10-11T06:51:52.967Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2017-12&#x2F;hashmap&#x2F;putVal.jpg">
+
+<link rel="canonical" href="https://xiasummer1019.github.io/2017/12/20/HashMap/">
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/20/HashMap/"/>
-
-
-
-
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
 
   <title>hashmap | xiasummer1019的博客</title>
   
@@ -141,205 +87,161 @@
 
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-  <meta name="google-site-verification" content="4hajUbVadzNoJJTulj9nD4OcrDn-Q_oYMiKs9oETACM" />
-    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+    <div>
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">xiasummer1019的博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
         <p class="site-subtitle">菜鸡的成长之路</p>
-      
   </div>
 
   <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
+
 <nav class="site-nav">
   
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
-  
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+  </ul>
+
 </nav>
-
-
-
- </div>
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
+  <div class="posts-expand">
+      
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/20/HashMap/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiasummer1019.github.io/2017/12/20/HashMap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="xiasummer1019的博客">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">hashmap</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          hashmap
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-20T10:57:22+08:00">
-                2017-12-20
-              </time>
-            
+              <span class="post-meta-item-text">发表于</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+              <time title="创建时间：2017-12-20 10:57:22" itemprop="dateCreated datePublished" datetime="2017-12-20T10:57:22+08:00">2017-12-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-10-11 14:51:52" itemprop="dateModified" datetime="2018-10-11T14:51:52+08:00">2018-10-11</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/JDK/" itemprop="url" rel="index">
                     <span itemprop="name">JDK</span>
                   </a>
                 </span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -347,244 +249,171 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <h1 id="HashMap-JDK1-8-集合类"><a href="#HashMap-JDK1-8-集合类" class="headerlink" title="HashMap JDK1.8  集合类"></a>HashMap JDK1.8  集合类</h1><p>jdk是最好的老师</p>
 <h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>map就是键值对，一个key对应一个value；<br>key1——–value1<br>key2——–value2<br>key3——–value3</p>
 <a id="more"></a> 
+
 <h2 id="HashMap-初始化"><a href="#HashMap-初始化" class="headerlink" title="HashMap 初始化"></a>HashMap 初始化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Map map = new HashMap();</span><br><span class="line">map.put(&quot;ABCD&quot;,&quot;123&quot;);</span><br></pre></td></tr></table></figure>
-<p>像前面list一样，先看初始化：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public HashMap() &#123;</span><br><span class="line">    this.loadFactor = DEFAULT_LOAD_FACTOR; // all other fields defaulted</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>像前面list一样，先看初始化：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public HashMap() &#123;</span><br><span class="line">    this.loadFactor = DEFAULT_LOAD_FACTOR; // all other fields defaulted</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>就是初始化了一个加载因子，这个是用来HashMap扩容用的，后会有详细介绍：<br><code>static final float DEFAULT_LOAD_FACTOR = 0.75f;</code><br>其他就没有了，那就还是老套路，在添加元素的时候初始化了。<br>在这之前先看看有哪些属性：<br><code>transient Node&lt;K,V&gt;[] table;</code><br>熟悉的数组，说明HashMap在内部的样子就是个数组。暂时还未指定大小。</p>
-<p>执行put方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public V put(K key, V value) &#123;</span><br><span class="line">    return putVal(hash(key), key, value, false, true);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>首先执行的是hash(key)方法（可以想一下为什么不用key自带的hashcode，而是再算了一遍）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">static final int hash(Object key) &#123;</span><br><span class="line">    int h;</span><br><span class="line">    return (key == null) ? 0 : (h = key.hashCode()) ^ (h &gt;&gt;&gt; 16);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>相当于：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int h;</span><br><span class="line">if(key == null)&#123;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    //h代表key对象原来的hashcode，这是基于key对象的hashcode方法计算出的hash值</span><br><span class="line">    //所以当新建一个对象时，equals方法和hashcode方法最好一起重写。</span><br><span class="line">    h = key.hashCode();</span><br><span class="line">    //&gt;&gt;&gt; 是 无符号的 右移 操作符。高位填充都是0，</span><br><span class="line">    //例如1000B = 8 &gt;&gt;&gt;2 变成 0010B = 2</span><br><span class="line">    h^(h &gt;&gt;&gt;16);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>前面的key=”ABCD”,在我本地的值是2001986，转换成二进制‭‭111101000110001000010，右移16位：11110<br>^两者相同为0不同为1，结果为：<br> 111101000110001000010^<br> 000000000000000011110<br>=111101000110001011100<br>这里就相当于将初始的hash值的高位和低位进行异或运算；这里看不出为什么做这些操作。<br>再来看：<br><code>final V putVal(int hash, K key, V value, boolean onlyIfAbsent,boolean evict)</code><br>第一个参数是hash，就是hash()方法计算出的来，后面是key和value，下一个参数onlyIfAbsent<br>就是假设<br>map.put(“ABCD”,”123”);<br>map.put(“ABCD”,”456”);<br>当该参数是true时，map内储存的还是123，不会被修改成456。<br>最后一个参数是用来给LinkedHashMap用的，在HashMap内部是个空的方法，不用去管他。<br>接着看<br><img src="/img/2017-12/hashmap/putVal.jpg" alt="putVal方法"><br>将上面的简单化：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//定义变量</span><br><span class="line">Node&lt;K,V&gt;[] tab;</span><br><span class="line">Node&lt;K,V&gt; p;</span><br><span class="line">int n, i;</span><br><span class="line">tab = table    //table 是之前的数组对象</span><br><span class="line">n = tab.length //当前的数组长度</span><br><span class="line">//判断是否需要初始化</span><br><span class="line">if (tab == null || n == 0)&#123;</span><br><span class="line"> tab = resize();//当前数组大小为0，resize到第一次大小16</span><br><span class="line"> n = tab.length;//重新计算大小</span><br><span class="line">&#125;</span><br><span class="line">i = (n - 1) &amp; hash;//这里终于用到了hash，这里计算数组下标，&amp;保证了i的结果范围在0~（n-1）之内</span><br><span class="line">p = tab[i];</span><br><span class="line">if (p == null)//判断该数组位数是否存在</span><br><span class="line">    tab[i] = newNode(hash, key, value, null);//初始化一个节点</span><br><span class="line">else &#123;...&#125;</span><br></pre></td></tr></table></figure></p>
+<p>执行put方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public V put(K key, V value) &#123;</span><br><span class="line">    return putVal(hash(key), key, value, false, true);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先执行的是hash(key)方法（可以想一下为什么不用key自带的hashcode，而是再算了一遍）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">static final int hash(Object key) &#123;</span><br><span class="line">    int h;</span><br><span class="line">    return (key == null) ? 0 : (h = key.hashCode()) ^ (h &gt;&gt;&gt; 16);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>相当于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int h;</span><br><span class="line">if(key == null)&#123;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    //h代表key对象原来的hashcode，这是基于key对象的hashcode方法计算出的hash值</span><br><span class="line">    //所以当新建一个对象时，equals方法和hashcode方法最好一起重写。</span><br><span class="line">    h = key.hashCode();</span><br><span class="line">    //&gt;&gt;&gt; 是 无符号的 右移 操作符。高位填充都是0，</span><br><span class="line">    //例如1000B = 8 &gt;&gt;&gt;2 变成 0010B = 2</span><br><span class="line">    h^(h &gt;&gt;&gt;16);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>前面的key=”ABCD”,在我本地的值是2001986，转换成二进制‭‭111101000110001000010，右移16位：11110<br>^两者相同为0不同为1，结果为：<br> 111101000110001000010^<br> 000000000000000011110<br>=111101000110001011100<br>这里就相当于将初始的hash值的高位和低位进行异或运算；这里看不出为什么做这些操作。<br>再来看：<br><code>final V putVal(int hash, K key, V value, boolean onlyIfAbsent,boolean evict)</code><br>第一个参数是hash，就是hash()方法计算出的来，后面是key和value，下一个参数onlyIfAbsent<br>就是假设<br>map.put(“ABCD”,”123”);<br>map.put(“ABCD”,”456”);<br>当该参数是true时，map内储存的还是123，不会被修改成456。<br>最后一个参数是用来给LinkedHashMap用的，在HashMap内部是个空的方法，不用去管他。<br>接着看<br><img src="/img/2017-12/hashmap/putVal.jpg" alt="putVal方法"><br>将上面的简单化：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//定义变量</span><br><span class="line">Node&lt;K,V&gt;[] tab;</span><br><span class="line">Node&lt;K,V&gt; p;</span><br><span class="line">int n, i;</span><br><span class="line">tab = table    //table 是之前的数组对象</span><br><span class="line">n = tab.length //当前的数组长度</span><br><span class="line">//判断是否需要初始化</span><br><span class="line">if (tab == null || n == 0)&#123;</span><br><span class="line"> tab = resize();//当前数组大小为0，resize到第一次大小16</span><br><span class="line"> n = tab.length;//重新计算大小</span><br><span class="line">&#125;</span><br><span class="line">i = (n - 1) &amp; hash;//这里终于用到了hash，这里计算数组下标，&amp;保证了i的结果范围在0~（n-1）之内</span><br><span class="line">p = tab[i];</span><br><span class="line">if (p == null)//判断该数组位数是否存在</span><br><span class="line">    tab[i] = newNode(hash, key, value, null);//初始化一个节点</span><br><span class="line">else &#123;...&#125;</span><br></pre></td></tr></table></figure>
 <p>这里的i的结果是根据hash方法和数组长度计算的，目的是将数组下标尽量散射存放，和ArrayList不同的是，不是按数组顺序存<br>放的。resize方法等会再看，resize结果表示初始化了一个长度为16的数组，i的计算结果是12，即<code>table[12] = &quot;123&quot;</code><br><img src="/img/2017-12/hashmap/firstAdd.jpg" alt="firstAdd"><br>所以HashMap的存放是<strong>无序</strong>的！<br>当再次添加<code>map.put(&quot;ABC&quot;,&quot;456&quot;);</code>，内部的数组为：<br><img src="/img/2017-12/hashmap/add.jpg" alt="add"><br>这就证明value是散列在HashMap内部的。<br><img src="/img/2017-12/hashmap/secondAdd.jpg" alt="secondAdd"></p>
-<p>可能你已经发现了，在上段程序中有个对p（即p = tab[i] ）==null 的判断，当一个元素添加到数组时，如果该位置已经存在<br>那么该怎么存放？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">static class Node&lt;K,V&gt; implements Map.Entry&lt;K,V&gt; &#123;</span><br><span class="line">    final int hash;</span><br><span class="line">    final K key;</span><br><span class="line">    V value;</span><br><span class="line">    Node&lt;K,V&gt; next;//指向下一个节点</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这个是内部静态对象，看到了之前提到的单向链表的关键：<code>Node&lt;K,V&gt; next</code>（详情看上文<a href="/2017/12/02/LinkedList/">LinkedList</a>）<br>那么接着看else里面的内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//p是计算的i的table[i]元素</span><br><span class="line">Node&lt;K,V&gt; e; K k;</span><br><span class="line">if (p.hash == hash &amp;&amp; //判断需要插入的对象hash和p是否相等</span><br><span class="line">    ((k = p.key) == key || (key != null &amp;&amp; key.equals(k)))) //判断key是否相等</span><br><span class="line">    e = p;</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<p>这里根据key和key的hash值判断是否是同一个对象，是的话后续替换value的值。那么要是不相等呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">else &#123;</span><br><span class="line">    for (int binCount = 0; ; ++binCount) &#123;//遍历该元素下的链表</span><br><span class="line">        if ((e = p.next) == null) &#123;//找到链表的最后一个数</span><br><span class="line">            p.next = newNode(hash, key, value, null);//将需要插入的数放在最后</span><br><span class="line">            if (binCount &gt;= TREEIFY_THRESHOLD - 1) // -1 for 1st</span><br><span class="line">                treeifyBin(tab, hash);</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">        if (e.hash == hash &amp;&amp;</span><br><span class="line">            ((k = e.key) == key || (key != null &amp;&amp; key.equals(k))))</span><br><span class="line">            break;</span><br><span class="line">        p = e;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可能你已经发现了，在上段程序中有个对p（即p = tab[i] ）==null 的判断，当一个元素添加到数组时，如果该位置已经存在<br>那么该怎么存放？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">static class Node&lt;K,V&gt; implements Map.Entry&lt;K,V&gt; &#123;</span><br><span class="line">    final int hash;</span><br><span class="line">    final K key;</span><br><span class="line">    V value;</span><br><span class="line">    Node&lt;K,V&gt; next;//指向下一个节点</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个是内部静态对象，看到了之前提到的单向链表的关键：<code>Node&lt;K,V&gt; next</code>（详情看上文<a href="/2017/12/02/LinkedList/">LinkedList</a>）<br>那么接着看else里面的内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//p是计算的i的table[i]元素</span><br><span class="line">Node&lt;K,V&gt; e; K k;</span><br><span class="line">if (p.hash == hash &amp;&amp; //判断需要插入的对象hash和p是否相等</span><br><span class="line">    ((k = p.key) == key || (key != null &amp;&amp; key.equals(k)))) //判断key是否相等</span><br><span class="line">    e = p;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>这里根据key和key的hash值判断是否是同一个对象，是的话后续替换value的值。那么要是不相等呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">else &#123;</span><br><span class="line">    for (int binCount = 0; ; ++binCount) &#123;//遍历该元素下的链表</span><br><span class="line">        if ((e = p.next) == null) &#123;//找到链表的最后一个数</span><br><span class="line">            p.next = newNode(hash, key, value, null);//将需要插入的数放在最后</span><br><span class="line">            if (binCount &gt;= TREEIFY_THRESHOLD - 1) // -1 for 1st</span><br><span class="line">                treeifyBin(tab, hash);</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">        if (e.hash == hash &amp;&amp;</span><br><span class="line">            ((k = e.key) == key || (key != null &amp;&amp; key.equals(k))))</span><br><span class="line">            break;</span><br><span class="line">        p = e;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里有个判断： <code>if (binCount &gt;= TREEIFY_THRESHOLD - 1)</code>,而<code>static final int TREEIFY_THRESHOLD = 8;</code><br>说明当binCount&gt;=8，即当该链表长度超过8是，开发者们觉得链表的效率不高了，就将它改成了红黑树<code>treeifyBin(tab, hash)</code>。<br><img src="/img/2017-12/hashmap/in8.jpg" alt="in8"><br><img src="/img/2017-12/hashmap/over8.jpg" alt="over8"></p>
 <p>##未完待续。。</p>
 
-      
     </div>
+
     
     
     
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Java，Map，Jdk/" rel="tag"># Java，Map，Jdk</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/12/14/javamail/" rel="next" title="javamail">
-                <i class="fa fa-chevron-left"></i> javamail
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java%EF%BC%8CMap%EF%BC%8CJdk/" rel="tag"># Java，Map，Jdk</a>
           </div>
 
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/11/es-oom/" rel="prev" title="es_oom">
-                es_oom <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  
-
-
-        </div>
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/12/14/javamail/" rel="prev" title="javamail">
+      <i class="fa fa-chevron-left"></i> javamail
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/08/11/es-oom/" rel="next" title="es_oom">
+      es_oom <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name"></p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">10</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          <div class="links-of-author motion-element">
-            
-          </div>
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HashMap-JDK1-8-集合类"><span class="nav-number">1.</span> <span class="nav-text">HashMap JDK1.8  集合类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Map"><span class="nav-number">1.1.</span> <span class="nav-text">Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap-初始化"><span class="nav-number">1.2.</span> <span class="nav-text">HashMap 初始化</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HashMap-JDK1-8-集合类"><span class="nav-number">1.</span> <span class="nav-text">HashMap JDK1.8  集合类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Map"><span class="nav-number">1.1.</span> <span class="nav-text">Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap-初始化"><span class="nav-number">1.2.</span> <span class="nav-text">HashMap 初始化</span></a></li></ol></li></ol></div>
+      </div>
       <!--/noindex-->
-      
 
-      
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiasummer1019" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiasummer1019" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder"></span>
-
-  
 </div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  </div>
   <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
-
-
-
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  </div>
 
         
 
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=[object Object]&web_id=[object Object]"></script>
+  </div>
 
 
 
@@ -594,29 +423,15 @@
         
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
   </div>
 
   
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -633,92 +448,9 @@
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
 
 
 
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
 
   
 

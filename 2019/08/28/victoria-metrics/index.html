@@ -1,135 +1,81 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="xiasummer1019的博客" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="time-series,时序数据库" />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="时序数据参考百科：  时序数据是指时间序列数据。时间序列数据是同一统一指标按时间顺序记录的数据列。在同一数据列中的各个数据必须是同口径的，要求具有可比性。时序数据可以是时期数，也可以时点数。时间序列分析的目的是通过找出样本内时间序列的统计特性和发展规律性，构建时间序列模型，进行样本外预测。  可以简单理解为一组随时间变化的数据，比如cpu的占用率，内存占用率等等一般的时序数据库由database，">
-<meta name="keywords" content="time-series,时序数据库">
-<meta property="og:type" content="article">
-<meta property="og:title" content="victoria_metrics">
-<meta property="og:url" content="http://yoursite.com/2019/08/28/victoria-metrics/index.html">
-<meta property="og:site_name" content="xiasummer1019的博客">
-<meta property="og:description" content="时序数据参考百科：  时序数据是指时间序列数据。时间序列数据是同一统一指标按时间顺序记录的数据列。在同一数据列中的各个数据必须是同口径的，要求具有可比性。时序数据可以是时期数，也可以时点数。时间序列分析的目的是通过找出样本内时间序列的统计特性和发展规律性，构建时间序列模型，进行样本外预测。  可以简单理解为一组随时间变化的数据，比如cpu的占用率，内存占用率等等一般的时序数据库由database，">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/img/2019-06/victoria/help.jpg">
-<meta property="og:image" content="http://yoursite.com/img/2019-06/victoria/start.jpg">
-<meta property="og:image" content="http://yoursite.com/img/2019-06/victoria/result1.jpg">
-<meta property="og:image" content="http://yoursite.com/img/2019-06/victoria/5mSelect.jpg">
-<meta property="og:updated_time" content="2019-11-06T09:29:27.702Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="victoria_metrics">
-<meta name="twitter:description" content="时序数据参考百科：  时序数据是指时间序列数据。时间序列数据是同一统一指标按时间顺序记录的数据列。在同一数据列中的各个数据必须是同口径的，要求具有可比性。时序数据可以是时期数，也可以时点数。时间序列分析的目的是通过找出样本内时间序列的统计特性和发展规律性，构建时间序列模型，进行样本外预测。  可以简单理解为一组随时间变化的数据，比如cpu的占用率，内存占用率等等一般的时序数据库由database，">
-<meta name="twitter:image" content="http://yoursite.com/img/2019-06/victoria/help.jpg">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    hostname: new URL('https://xiasummer1019.github.io').hostname,
     root: '/',
-    scheme: 'Muse',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
+    scheme: 'Mist',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
     algolia: {
-      applicationID: '',
+      appID: '',
       apiKey: '',
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
   };
 </script>
 
+  <meta name="description" content="时序数据参考百科：  时序数据是指时间序列数据。时间序列数据是同一统一指标按时间顺序记录的数据列。在同一数据列中的各个数据必须是同口径的，要求具有可比性。时序数据可以是时期数，也可以时点数。时间序列分析的目的是通过找出样本内时间序列的统计特性和发展规律性，构建时间序列模型，进行样本外预测。  可以简单理解为一组随时间变化的数据，比如cpu的占用率，内存占用率等等一般的时序数据库由database，">
+<meta name="keywords" content="time-series,时序数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="victoria_metrics">
+<meta property="og:url" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;2019&#x2F;08&#x2F;28&#x2F;victoria-metrics&#x2F;index.html">
+<meta property="og:site_name" content="xiasummer1019的博客">
+<meta property="og:description" content="时序数据参考百科：  时序数据是指时间序列数据。时间序列数据是同一统一指标按时间顺序记录的数据列。在同一数据列中的各个数据必须是同口径的，要求具有可比性。时序数据可以是时期数，也可以时点数。时间序列分析的目的是通过找出样本内时间序列的统计特性和发展规律性，构建时间序列模型，进行样本外预测。  可以简单理解为一组随时间变化的数据，比如cpu的占用率，内存占用率等等一般的时序数据库由database，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2019-06&#x2F;victoria&#x2F;help.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2019-06&#x2F;victoria&#x2F;start.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2019-06&#x2F;victoria&#x2F;result1.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2019-06&#x2F;victoria&#x2F;5mSelect.jpg">
+<meta property="og:updated_time" content="2019-11-06T09:29:27.702Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2019-06&#x2F;victoria&#x2F;help.jpg">
+
+<link rel="canonical" href="https://xiasummer1019.github.io/2019/08/28/victoria-metrics/">
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/28/victoria-metrics/"/>
-
-
-
-
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
 
   <title>victoria_metrics | xiasummer1019的博客</title>
   
@@ -139,213 +85,166 @@
 
 
 
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-  <meta name="google-site-verification" content="4hajUbVadzNoJJTulj9nD4OcrDn-Q_oYMiKs9oETACM" />
-    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+    <div>
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">xiasummer1019的博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
         <p class="site-subtitle">菜鸡的成长之路</p>
-      
   </div>
 
   <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
+
 <nav class="site-nav">
   
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
-  
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+  </ul>
+
 </nav>
-
-
-
- </div>
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
+  <div class="posts-expand">
+      
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/28/victoria-metrics/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiasummer1019.github.io/2019/08/28/victoria-metrics/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="xiasummer1019的博客">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">victoria_metrics</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          victoria_metrics
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-28T15:28:27+08:00">
-                2019-08-28
-              </time>
-            
+              <span class="post-meta-item-text">发表于</span>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+              <time title="创建时间：2019-08-28 15:28:27" itemprop="dateCreated datePublished" datetime="2019-08-28T15:28:27+08:00">2019-08-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-06 17:29:27" itemprop="dateModified" datetime="2019-11-06T17:29:27+08:00">2019-11-06</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/database/" itemprop="url" rel="index">
                     <span itemprop="name">database</span>
                   </a>
                 </span>
-
-                
-                
-              
             </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
 
       
         <h2 id="时序数据"><a href="#时序数据" class="headerlink" title="时序数据"></a>时序数据</h2><p>参考百科：</p>
@@ -354,13 +253,13 @@
 </blockquote>
 <p>可以简单理解为一组随时间变化的数据，比如cpu的占用率，内存占用率等等<br>一般的时序数据库由database，measurement（类比table），point（类比一列数据组成）<br>而point则是由时间戳（time）、数据（field）、标签（tag）组成。<br>time：存入的时间戳，一般自动生成<br>field：记录值，一般随时间变化。e.g.温度，速度，湿度，高度，cpu负载…<br>tag: 索引值，不随时间变化的值。机器的ip，地区，飞机的架次…  </p>
 <a id="more"></a> 
-<h2 id="victoria-简介"><a href="#victoria-简介" class="headerlink" title="victoria 简介"></a>victoria 简介</h2><p>首先附上github地址：<a href="https://github.com/VictoriaMetrics/VictoriaMetrics.github.io" target="_blank" rel="external">victoria</a><br>支持单节点，集群方式部署，两种版本均开源。     </p>
+<h2 id="victoria-简介"><a href="#victoria-简介" class="headerlink" title="victoria 简介"></a>victoria 简介</h2><p>首先附上github地址：<a href="https://github.com/VictoriaMetrics/VictoriaMetrics.github.io" target="_blank" rel="noopener">victoria</a><br>支持单节点，集群方式部署，两种版本均开源。     </p>
 <h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
-<li>可以作为Prometheus的远端存储，有<a href="https://github.com/VictoriaMetrics/VictoriaMetrics/releases" target="_blank" rel="external">执行文件</a>，<a href="https://hub.docker.com/r/victoriametrics/victoria-metrics/" target="_blank" rel="external">docker</a>，<a href="https://github.com/VictoriaMetrics/VictoriaMetrics" target="_blank" rel="external">源码</a>三种方式可以获取victoria。<br>支持 <a href="https://prometheus.io/docs/prometheus/latest/querying/api/" target="_blank" rel="external">Prometheus querying API</a>的查询语法,并且扩展了PromQL：<a href="https://github.com/VictoriaMetrics/VictoriaMetrics/wiki/ExtendedPromQL" target="_blank" rel="external">ExtendedPromQL</a></li>
+<li>可以作为Prometheus的远端存储，有<a href="https://github.com/VictoriaMetrics/VictoriaMetrics/releases" target="_blank" rel="noopener">执行文件</a>，<a href="https://hub.docker.com/r/victoriametrics/victoria-metrics/" target="_blank" rel="noopener">docker</a>，<a href="https://github.com/VictoriaMetrics/VictoriaMetrics" target="_blank" rel="noopener">源码</a>三种方式可以获取victoria。<br>支持 <a href="https://prometheus.io/docs/prometheus/latest/querying/api/" target="_blank" rel="noopener">Prometheus querying API</a>的查询语法,并且扩展了PromQL：<a href="https://github.com/VictoriaMetrics/VictoriaMetrics/wiki/ExtendedPromQL" target="_blank" rel="noopener">ExtendedPromQL</a></li>
 <li>性能<br>官方宣称在insert和select时比InfluxDB 和 TimescaleDB表现好20倍；<br>百万级别的高基数（类比mysql distinct）数据内存使用量比 InfluxDB 少10倍；<br>比TimescaleDB可以多存储70倍的数据；<br>针对垃圾硬盘和高延迟网络做了针对性的优化；<br>单节点就可以替代Thanos, Uber M3, Cortex, InfluxDB or TimescaleDB等数据库集群版。</li>
 </ol>
 <p>这个我觉得好用是肯定的，但是在实际的生产上肯定没有他说的这么夸张，毕竟生产数据和测试数据还是有区别的，而且随着数据量的增大，这个比值还会更小一点。<br>话不多时，看看victoria是怎么运行的。</p>
-<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><p>这个就比较简单了，可<a href="https://github.com/VictoriaMetrics/VictoriaMetrics/releases" target="_blank" rel="external">执行文件</a>和<a href="https://hub.docker.com/r/victoriametrics/victoria-metrics/" target="_blank" rel="external">docker image</a>都可以。我目前环境，没有docker，所以就直接下载执行文件好了。本地测试的话可以装个虚拟机。<br>直接下载victoria-metrics-v1.26.0.tar.gz,然后扔到/opt下面，直接解压<br><code>tar -xzvf victoria-metrics-v1.26.0.tar.gz</code><br>下面是一些主要参数：</p>
+<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><p>这个就比较简单了，可<a href="https://github.com/VictoriaMetrics/VictoriaMetrics/releases" target="_blank" rel="noopener">执行文件</a>和<a href="https://hub.docker.com/r/victoriametrics/victoria-metrics/" target="_blank" rel="noopener">docker image</a>都可以。我目前环境，没有docker，所以就直接下载执行文件好了。本地测试的话可以装个虚拟机。<br>直接下载victoria-metrics-v1.26.0.tar.gz,然后扔到/opt下面，直接解压<br><code>tar -xzvf victoria-metrics-v1.26.0.tar.gz</code><br>下面是一些主要参数：</p>
 <ol>
 <li>-storageDataPath：储存目录，所有数据存放的地方</li>
 <li>-retentionPeriod：过期时间，单位是月，相当于redis的expire time</li>
@@ -369,318 +268,237 @@
 <li>省略与其他系统集成的参数<br>也可以执行<code>./victoria-metrics-prod -help</code>查看可选项，也有简单的说明：<br><img src="/img/2019-06/victoria/help.jpg" alt="help"><br>开始执行：<br><code>./victoria-metrics-prod -storageDataPath /data -retentionPeriod 3</code><br><img src="/img/2019-06/victoria/start.jpg" alt="start"></li>
 </ol>
 <h2 id="ingest-data"><a href="#ingest-data" class="headerlink" title="ingest data"></a>ingest data</h2><p>victoria和prometheus在一起还是很好用的，但是如果你只是先测试下性能，也有很多种方式。</p>
-<h3 id="InfluxDB-API-reference"><a href="#InfluxDB-API-reference" class="headerlink" title="InfluxDB API reference"></a>InfluxDB API reference</h3><p>支持以InfluxDB line protocol的格式导入(含义介绍看上文)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+-----------+-----------+-+------------+-+---------+</span><br><span class="line">|measurement|,tag_set[,]| |field_set[,]| |timestamp|</span><br><span class="line">+-----------+-----------+-+------------+-+---------+</span><br></pre></td></tr></table></figure></p>
-<p>很多时候，为了方便起见，timestamp可以让数据库自己去生成，但是也可以自己指定时间字段。<br>需要注意的是Influx line protocol默认是<em>纳秒</em>级别，而victoria的精度是<em>毫秒milliseconds</em>。<br>执行如下的命令：（自行替换ip地址）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -d &apos;measurement,tag1=value1,tag2=value2 field1=123,field2=1.23&apos; -X POST &apos;http://192.168.244.128:8428/write&apos;</span><br></pre></td></tr></table></figure></p>
-<p>或者直接上手写代码(java版)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String msg = &quot;measurement,tag1=value1,tag2=value2 field1=123,field2=1.23&quot;;</span><br><span class="line">HttpPost post = new HttpPost(&quot;http://192.168.244.128:8428/write&quot;);</span><br><span class="line">StringEntity stringEntity = new StringEntity(msg);</span><br><span class="line">stringEntity.setContentType(&quot;text/plain&quot;);</span><br><span class="line">post.setEntity(stringEntity);</span><br><span class="line">HttpResponse response = httpClient.execute(post);</span><br></pre></td></tr></table></figure></p>
-<p>如有多条记录用<code>\n</code>分割<br>查看一下刚才的详情：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -G &apos;http://localhost:8428/api/v1/export&apos; -d &apos;match=&#123;__name__!=&quot;&quot;&#125;&apos;</span><br></pre></td></tr></table></figure></p>
-<p>或者直接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.244.128:8428/api/v1/export?match=&#123;__name__!=%22%22&#125;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/img/2019-06/victoria/result1.jpg" alt="result1"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;metric&quot;:&#123;&quot;__name__&quot;:&quot;measurement_field1&quot;,&quot;tag1&quot;:&quot;value1&quot;,&quot;tag2&quot;:&quot;value2&quot;&#125;,&quot;values&quot;:[123],&quot;timestamps&quot;:[1567069314398]&#125;</span><br><span class="line">&#123;&quot;metric&quot;:&#123;&quot;__name__&quot;:&quot;measurement_field2&quot;,&quot;tag1&quot;:&quot;value1&quot;,&quot;tag2&quot;:&quot;value2&quot;&#125;,&quot;values&quot;:[1.23],&quot;timestamps&quot;:[1567069314398]&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="InfluxDB-API-reference"><a href="#InfluxDB-API-reference" class="headerlink" title="InfluxDB API reference"></a>InfluxDB API reference</h3><p>支持以InfluxDB line protocol的格式导入(含义介绍看上文)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+-----------+-----------+-+------------+-+---------+</span><br><span class="line">|measurement|,tag_set[,]| |field_set[,]| |timestamp|</span><br><span class="line">+-----------+-----------+-+------------+-+---------+</span><br></pre></td></tr></table></figure>
+
+<p>很多时候，为了方便起见，timestamp可以让数据库自己去生成，但是也可以自己指定时间字段。<br>需要注意的是Influx line protocol默认是<em>纳秒</em>级别，而victoria的精度是<em>毫秒milliseconds</em>。<br>执行如下的命令：（自行替换ip地址）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -d &apos;measurement,tag1=value1,tag2=value2 field1=123,field2=1.23&apos; -X POST &apos;http://192.168.244.128:8428/write&apos;</span><br></pre></td></tr></table></figure>
+<p>或者直接上手写代码(java版)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String msg = &quot;measurement,tag1=value1,tag2=value2 field1=123,field2=1.23&quot;;</span><br><span class="line">HttpPost post = new HttpPost(&quot;http://192.168.244.128:8428/write&quot;);</span><br><span class="line">StringEntity stringEntity = new StringEntity(msg);</span><br><span class="line">stringEntity.setContentType(&quot;text/plain&quot;);</span><br><span class="line">post.setEntity(stringEntity);</span><br><span class="line">HttpResponse response = httpClient.execute(post);</span><br></pre></td></tr></table></figure>
+<p>如有多条记录用<code>\n</code>分割<br>查看一下刚才的详情：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -G &apos;http://localhost:8428/api/v1/export&apos; -d &apos;match=&#123;__name__!=&quot;&quot;&#125;&apos;</span><br></pre></td></tr></table></figure>
+<p>或者直接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.244.128:8428/api/v1/export?match=&#123;__name__!=%22%22&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/img/2019-06/victoria/result1.jpg" alt="result1"> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;metric&quot;:&#123;&quot;__name__&quot;:&quot;measurement_field1&quot;,&quot;tag1&quot;:&quot;value1&quot;,&quot;tag2&quot;:&quot;value2&quot;&#125;,&quot;values&quot;:[123],&quot;timestamps&quot;:[1567069314398]&#125;</span><br><span class="line">&#123;&quot;metric&quot;:&#123;&quot;__name__&quot;:&quot;measurement_field2&quot;,&quot;tag1&quot;:&quot;value1&quot;,&quot;tag2&quot;:&quot;value2&quot;&#125;,&quot;values&quot;:[1.23],&quot;timestamps&quot;:[1567069314398]&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这时候发现原来的的格式被转成了<br>foo_field1{tag1=”value1”, tag2=”value2”} 123<br>foo_field2{tag1=”value1”, tag2=”value2”} 1.23<br>生成的规则如下：</p>
 <ol>
-<li><p>（InfluxDB兼容客户端导入）db这个参数会被映射为db的tag（除非指定了某一个tag的名字为db）<br>这就表示了（个人理解）在同一个victoria中，一个运行实例只对应一个数据库。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;metric&quot;:&#123;&quot;__name__&quot;:&quot;measurement_field1&quot;,&quot;db&quot;:&quot;mydb&quot;,&quot;tag1&quot;:&quot;value1&quot;,&quot;tag2&quot;:&quot;value2&quot;&#125;,&quot;values&quot;:[123],&quot;timestamps&quot;:[1567070190793]&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>度量<code>{measurement}</code>和分隔符<code>{separator}</code>会加在field的前面，形成不同的表。</p>
-</li>
+<li>（InfluxDB兼容客户端导入）db这个参数会被映射为db的tag（除非指定了某一个tag的名字为db）<br>这就表示了（个人理解）在同一个victoria中，一个运行实例只对应一个数据库。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;metric&quot;:&#123;&quot;__name__&quot;:&quot;measurement_field1&quot;,&quot;db&quot;:&quot;mydb&quot;,&quot;tag1&quot;:&quot;value1&quot;,&quot;tag2&quot;:&quot;value2&quot;&#125;,&quot;values&quot;:[123],&quot;timestamps&quot;:[1567070190793]&#125;</span><br></pre></td></tr></table></figure></li>
+<li>度量<code>{measurement}</code>和分隔符<code>{separator}</code>会加在field的前面，形成不同的表。</li>
 <li>Tags和Prometheus的labels一致</li>
 </ol>
-<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>支持基本的PromQL和拓展的sql，先插入部分数据：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String msg = &quot;&quot;;</span><br><span class="line">for (int j = 1; j &lt; 100; j++) &#123;</span><br><span class="line">    msg += &quot;metric,location=nj,ldc=xz pvcount=&quot; + j + &quot;\n&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="PromQL"><a href="#PromQL" class="headerlink" title="PromQL"></a>PromQL</h3><p>基本语法：<code>measurement{tag}[time]</code><br>=: 相等<br>!=: 不等<br>=~: 正则匹配<br>!~: 正则不匹配<br>|: 或<br>time取值：（没有月，可能考虑到月份不固定，会增加额外的计算量，可以用weeks代替）<br>s - seconds<br>m - minutes<br>h - hours<br>d - days<br>w - weeks<br>y - years</p>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>支持基本的PromQL和拓展的sql，先插入部分数据：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String msg = &quot;&quot;;</span><br><span class="line">for (int j = 1; j &lt; 100; j++) &#123;</span><br><span class="line">    msg += &quot;metric,location=nj,ldc=xz pvcount=&quot; + j + &quot;\n&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="PromQL"><a href="#PromQL" class="headerlink" title="PromQL"></a>PromQL</h3><p>基本语法：<code>measurement{tag}[time]</code><br>=: 相等<br>!=: 不等<br>=<del>: 正则匹配<br>!</del>: 正则不匹配<br>|: 或<br>time取值：（没有月，可能考虑到月份不固定，会增加额外的计算量，可以用weeks代替）<br>s - seconds<br>m - minutes<br>h - hours<br>d - days<br>w - weeks<br>y - years</p>
 <p>简单的example：</p>
 <h4 id="精确-范围查询"><a href="#精确-范围查询" class="headerlink" title="精确/范围查询"></a>精确/范围查询</h4><ul>
 <li><p><code>metric_pvcount</code><br><code>xxxx:8428/api/v1/query?query=metric_pvcount</code><br>返回metric_pvcount内每一个不同的tag值对应最新的指标值（单个数据）（5min中内有效）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:&#123;&quot;resultType&quot;:&quot;vector&quot;,&quot;result&quot;:[&#123;&quot;metric&quot;:&#123;&quot;__name__&quot;:&quot;metric_pvcount&quot;,&quot;ldc&quot;:&quot;aa&quot;,&quot;location&quot;:&quot;nj&quot;&#125;,&quot;value&quot;:[1567080394,&quot;99&quot;]&#125;,&#123;&quot;metric&quot;:&#123;&quot;__name__&quot;:&quot;metric_pvcount&quot;,&quot;ldc&quot;:&quot;bb&quot;,&quot;location&quot;:&quot;nj&quot;&#125;,&quot;value&quot;:[1567080394,&quot;99&quot;]&#125;]&#125;&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:&#123;&quot;resultType&quot;:&quot;vector&quot;,&quot;result&quot;:[&#123;&quot;metric&quot;:&#123;&quot;__name__&quot;:&quot;metric_pvcount&quot;,&quot;ldc&quot;:&quot;aa&quot;,&quot;location&quot;:&quot;nj&quot;&#125;,&quot;value&quot;:[1567080394,&quot;99&quot;]&#125;,&#123;&quot;metric&quot;:&#123;&quot;__name__&quot;:&quot;metric_pvcount&quot;,&quot;ldc&quot;:&quot;bb&quot;,&quot;location&quot;:&quot;nj&quot;&#125;,&quot;value&quot;:[1567080394,&quot;99&quot;]&#125;]&#125;&#125;</span><br></pre></td></tr></table></figure></li>
 <li><p><code>metric_pvcount{ldc=&quot;bb&quot;}</code>返回ldc=bb的最新的指标值（5min中内有效）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:&#123;&quot;resultType&quot;:&quot;vector&quot;,&quot;result&quot;:[&#123;&quot;metric&quot;:&#123;&quot;__name__&quot;:&quot;metric_pvcount&quot;,&quot;ldc&quot;:&quot;bb&quot;,&quot;location&quot;:&quot;nj&quot;&#125;,&quot;value&quot;:[1567080446,&quot;99&quot;]&#125;]&#125;&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:&#123;&quot;resultType&quot;:&quot;vector&quot;,&quot;result&quot;:[&#123;&quot;metric&quot;:&#123;&quot;__name__&quot;:&quot;metric_pvcount&quot;,&quot;ldc&quot;:&quot;bb&quot;,&quot;location&quot;:&quot;nj&quot;&#125;,&quot;value&quot;:[1567080446,&quot;99&quot;]&#125;]&#125;&#125;</span><br></pre></td></tr></table></figure></li>
 <li><p><code>metric_pvcount{ldc=&quot;bb&quot;}[5m]</code>返回5分钟内所有ldc=bb的指标值<br><img src="/img/2019-06/victoria/5mSelect.jpg" alt="5mSelect"> </p>
 </li>
 <li><p><code>metric_pvcount{ldc=&quot;bb&quot;}[5m] offset 10m</code>返回距离现在15分钟-10分钟内（共5分钟）所有ldc=bb的指标值</p>
 </li>
 </ul>
-<h4 id="正则匹配"><a href="#正则匹配" class="headerlink" title="正则匹配"></a>正则匹配</h4><p>正则表达式支持语法<a href="https://github.com/google/re2/wiki/Syntax" target="_blank" rel="external">RE2 syntax</a>(github)</p>
+<h4 id="正则匹配"><a href="#正则匹配" class="headerlink" title="正则匹配"></a>正则匹配</h4><p>正则表达式支持语法<a href="https://github.com/google/re2/wiki/Syntax" target="_blank" rel="noopener">RE2 syntax</a>(github)</p>
 <ul>
 <li><code>metric_pvcount{ldc=~&quot;.*b&quot;}[5m]</code>返回5分钟内所有ldc以b结尾的指标值。  </li>
 </ul>
-<p>重新插入部分数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String msg = &quot;&quot;;</span><br><span class="line">for (int j = 1; j &lt; 100; j++) &#123;</span><br><span class="line">    msg += &quot;metric,location=bj,ldc=zgc pvcount=&quot; + j + &quot;\n&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>重新插入部分数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String msg = &quot;&quot;;</span><br><span class="line">for (int j = 1; j &lt; 100; j++) &#123;</span><br><span class="line">    msg += &quot;metric,location=bj,ldc=zgc pvcount=&quot; + j + &quot;\n&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="统计值"><a href="#统计值" class="headerlink" title="统计值"></a>统计值</h4><ul>
-<li><p><code>sum(metric_pvcount[20m])</code>返回20分钟内所有的指标值所有数据之和最新指标相加 99+99)(for each timestamp)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:&#123;&quot;resultType&quot;:&quot;vector&quot;,&quot;result&quot;:[&#123;&quot;metric&quot;:&#123;&#125;,&quot;value&quot;:[1573029005,&quot;198&quot;]&#125;]&#125;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>sum_over_time(metric_pvcount[20m])</code>返回20分钟内所有的指标值所有数据之和(每一条指标相加 1+2+…+99)(all the m value over d duration.)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:&#123;&quot;resultType&quot;:&quot;vector&quot;,&quot;result&quot;:[&#123;&quot;metric&quot;:&#123;&quot;ldc&quot;:&quot;xz&quot;,&quot;location&quot;:&quot;nj&quot;&#125;,&quot;value&quot;:[1573028830,&quot;4950&quot;]&#125;]&#125;&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li><code>sum(metric_pvcount[20m])</code>返回20分钟内所有的指标值所有数据之和最新指标相加 99+99)(for each timestamp)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:&#123;&quot;resultType&quot;:&quot;vector&quot;,&quot;result&quot;:[&#123;&quot;metric&quot;:&#123;&#125;,&quot;value&quot;:[1573029005,&quot;198&quot;]&#125;]&#125;&#125;</span><br></pre></td></tr></table></figure></li>
+<li><code>sum_over_time(metric_pvcount[20m])</code>返回20分钟内所有的指标值所有数据之和(每一条指标相加 1+2+…+99)(all the m value over d duration.)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:&#123;&quot;resultType&quot;:&quot;vector&quot;,&quot;result&quot;:[&#123;&quot;metric&quot;:&#123;&quot;ldc&quot;:&quot;xz&quot;,&quot;location&quot;:&quot;nj&quot;&#125;,&quot;value&quot;:[1573028830,&quot;4950&quot;]&#125;]&#125;&#125;</span><br></pre></td></tr></table></figure>
+常用的一些命令：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sum_over_time</span><br><span class="line">sum2_over_time</span><br><span class="line">distinct_over_time</span><br><span class="line">avg_over_time</span><br><span class="line">max_over_time</span><br></pre></td></tr></table></figure>
+其他命令参考：<br><a href="https://github.com/VictoriaMetrics/VictoriaMetrics/wiki/ExtendedPromQL" target="_blank" rel="noopener">ExtendedPromQL</a>(github)</li>
 </ul>
-<p>常用的一些命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sum_over_time</span><br><span class="line">sum2_over_time</span><br><span class="line">distinct_over_time</span><br><span class="line">avg_over_time</span><br><span class="line">max_over_time</span><br></pre></td></tr></table></figure></p>
-<p>其他命令参考：<br><a href="https://github.com/VictoriaMetrics/VictoriaMetrics/wiki/ExtendedPromQL" target="_blank" rel="external">ExtendedPromQL</a>(github)</p>
 <h2 id="压测"><a href="#压测" class="headerlink" title="压测"></a>压测</h2><p>由于没有系统的测试工具，全靠人工，所以仅供参考。本地电脑的2c,2g的虚拟机。<br>在导入121000基数的情况下，磁盘占用80k的数据，虽然可能是我传的数据的问题，不过这个磁盘占用真的是省啊。</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">语句</th>
-<th style="text-align:center">结果</th>
-<th style="text-align:center">耗时</th>
+<th align="center">语句</th>
+<th align="center">结果</th>
+<th align="center">耗时</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">sum_over_time</td>
-<td style="text-align:center"><code>&quot;value&quot;:[1573031637,&quot;298934190500&quot;]</code></td>
-<td style="text-align:center">204ms</td>
+<tbody><tr>
+<td align="center">sum_over_time</td>
+<td align="center"><code>&quot;value&quot;:[1573031637,&quot;298934190500&quot;]</code></td>
+<td align="center">204ms</td>
 </tr>
 <tr>
-<td style="text-align:center">distinct_over_time</td>
-<td style="text-align:center"><code>&quot;value&quot;:[1573031683,&quot;121000&quot;]</code></td>
-<td style="text-align:center">1.2s</td>
+<td align="center">distinct_over_time</td>
+<td align="center"><code>&quot;value&quot;:[1573031683,&quot;121000&quot;]</code></td>
+<td align="center">1.2s</td>
 </tr>
 <tr>
-<td style="text-align:center">avg_over_time</td>
-<td style="text-align:center"><code>&quot;value&quot;:[1573031720,&quot;40500.5&quot;]</code></td>
-<td style="text-align:center">198ms</td>
+<td align="center">avg_over_time</td>
+<td align="center"><code>&quot;value&quot;:[1573031720,&quot;40500.5&quot;]</code></td>
+<td align="center">198ms</td>
 </tr>
 <tr>
-<td style="text-align:center">max_over_time</td>
-<td style="text-align:center"><code>&quot;value&quot;:[1573031720,&quot;121000&quot;]</code></td>
-<td style="text-align:center">194ms</td>
+<td align="center">max_over_time</td>
+<td align="center"><code>&quot;value&quot;:[1573031720,&quot;121000&quot;]</code></td>
+<td align="center">194ms</td>
 </tr>
 <tr>
-<td style="text-align:center">min_over_time</td>
-<td style="text-align:center"><code>&quot;value&quot;:[1573031720,&quot;1&quot;]</code></td>
-<td style="text-align:center">216ms</td>
+<td align="center">min_over_time</td>
+<td align="center"><code>&quot;value&quot;:[1573031720,&quot;1&quot;]</code></td>
+<td align="center">216ms</td>
 </tr>
 <tr>
-<td style="text-align:center">sum</td>
-<td style="text-align:center"><code>&quot;value&quot;:[1573031720,&quot;1&quot;]</code></td>
-<td style="text-align:center">265ms</td>
+<td align="center">sum</td>
+<td align="center"><code>&quot;value&quot;:[1573031720,&quot;1&quot;]</code></td>
+<td align="center">265ms</td>
 </tr>
 <tr>
-<td style="text-align:center">distinct</td>
-<td style="text-align:center"><code>&quot;value&quot;:[1573031720,&quot;1&quot;]</code></td>
-<td style="text-align:center">277ms</td>
+<td align="center">distinct</td>
+<td align="center"><code>&quot;value&quot;:[1573031720,&quot;1&quot;]</code></td>
+<td align="center">277ms</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>这个只是个简单测试，主要是虚拟机性能受限，但是整体的性能还是不错的。<br>但是我在测试的时候发现，从数据导入到可以进行查询，统计的时间有点长，暂时还未发现refresh_interval在哪设置。<br>可能集群版的性能会好很多吧。期待后续测试结果。</p>
 
-      
     </div>
+
     
     
     
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/time-series/" rel="tag"># time-series</a>
-          
-            <a href="/tags/database/" rel="tag"># database</a>
-          
-            <a href="/tags/时序数据库/" rel="tag"># 时序数据库</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/08/20/es-manage/" rel="next" title="es template">
-                <i class="fa fa-chevron-left"></i> es template
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/time-series/" rel="tag"># time-series</a>
+              <a href="/tags/database/" rel="tag"># database</a>
+              <a href="/tags/%E6%97%B6%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 时序数据库</a>
           </div>
 
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  
-
-
-        </div>
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/08/20/es-manage/" rel="prev" title="es template">
+      <i class="fa fa-chevron-left"></i> es template
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name"></p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">10</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
-            
-
-          </nav>
-
-          
-
-          <div class="links-of-author motion-element">
-            
-          </div>
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#时序数据"><span class="nav-number">1.</span> <span class="nav-text">时序数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#victoria-简介"><span class="nav-number">2.</span> <span class="nav-text">victoria 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行"><span class="nav-number">3.</span> <span class="nav-text">执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ingest-data"><span class="nav-number">4.</span> <span class="nav-text">ingest data</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#InfluxDB-API-reference"><span class="nav-number">4.1.</span> <span class="nav-text">InfluxDB API reference</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询"><span class="nav-number">5.</span> <span class="nav-text">查询</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PromQL"><span class="nav-number">5.1.</span> <span class="nav-text">PromQL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#精确-范围查询"><span class="nav-number">5.1.1.</span> <span class="nav-text">精确/范围查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则匹配"><span class="nav-number">5.1.2.</span> <span class="nav-text">正则匹配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#统计值"><span class="nav-number">5.1.3.</span> <span class="nav-text">统计值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#压测"><span class="nav-number">6.</span> <span class="nav-text">压测</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#时序数据"><span class="nav-number">1.</span> <span class="nav-text">时序数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#victoria-简介"><span class="nav-number">2.</span> <span class="nav-text">victoria 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行"><span class="nav-number">3.</span> <span class="nav-text">执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ingest-data"><span class="nav-number">4.</span> <span class="nav-text">ingest data</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#InfluxDB-API-reference"><span class="nav-number">4.1.</span> <span class="nav-text">InfluxDB API reference</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询"><span class="nav-number">5.</span> <span class="nav-text">查询</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PromQL"><span class="nav-number">5.1.</span> <span class="nav-text">PromQL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#精确-范围查询"><span class="nav-number">5.1.1.</span> <span class="nav-text">精确/范围查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则匹配"><span class="nav-number">5.1.2.</span> <span class="nav-text">正则匹配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#统计值"><span class="nav-number">5.1.3.</span> <span class="nav-text">统计值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#压测"><span class="nav-number">6.</span> <span class="nav-text">压测</span></a></li></ol></div>
+      </div>
       <!--/noindex-->
-      
 
-      
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiasummer1019" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiasummer1019" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder"></span>
-
-  
 </div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  </div>
   <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
-
-
-
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  </div>
 
         
 
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=[object Object]&web_id=[object Object]"></script>
+  </div>
 
 
 
@@ -690,29 +508,15 @@
         
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
   </div>
 
   
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -729,92 +533,9 @@
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
 
 
 
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
 
   
 
