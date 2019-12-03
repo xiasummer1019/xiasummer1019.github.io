@@ -63,7 +63,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2017-12&#x2F;linkedlist&#x2F;add.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2017-12&#x2F;linkedlist&#x2F;remove.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2017-12&#x2F;linkedlist&#x2F;unlink.jpg">
-<meta property="og:updated_time" content="2018-10-11T06:54:19.133Z">
+<meta property="og:updated_time" content="2019-11-25T03:52:13.426Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2017-12&#x2F;linkedlist&#x2F;array.jpg">
 
@@ -226,7 +226,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2018-10-11 14:54:19" itemprop="dateModified" datetime="2018-10-11T14:54:19+08:00">2018-10-11</time>
+                <time title="修改时间：2019-11-25 11:52:13" itemprop="dateModified" datetime="2019-11-25T11:52:13+08:00">2019-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -255,11 +255,12 @@
 <h2 id="链表，循环链表，双向链表"><a href="#链表，循环链表，双向链表" class="headerlink" title="链表，循环链表，双向链表"></a>链表，循环链表，双向链表</h2><h3 id="什么是链表？"><a href="#什么是链表？" class="headerlink" title="什么是链表？"></a>什么是链表？</h3><p>一般来说一个简单的数组为：Car[] car = new Car[5] ;<br>那么在堆内存中他们的内存地址一般是连续的：<br><img src="/img/2017-12/linkedlist/array.jpg" alt="数组"><br>但是如果随机创建了Car car0,car1,…car4这些对象，那么怎么样将他们串联起来呢？</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public Car &#123;</span><br><span class="line">    public String Name;</span><br><span class="line">    public Car next;//指向下一个节点</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="/img/2017-12/linkedlist/singleLink.jpg" alt="单链表"><br>这就是一个单向链表，在单向链表中知道第一个对象，就可以找到下面一个对象，以此类推，直到最后一个元素。</p>
+<a id="more"></a> 
+
 <p>单项循环链表就是将最后一位car4的next指向第一位，即car4.next = car0;这样就形成了一个循环，只要知道其中任何一个元素，就可以了解整个循环过程<br><img src="/img/2017-12/linkedlist/circycleLink.jpg" alt="单项循环链表"><br>下面双向链表：这个就是LinkedList所用到的结构，相比之下多了一个存放上个节点的地址</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public Car &#123;</span><br><span class="line">    public String Name;</span><br><span class="line">    public Car next;//指向下一个节点</span><br><span class="line">    public Car prev;//指向上一个节点</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="/img/2017-12/linkedlist/doublelist.jpg" alt="双向链表"></p>
 <p>最后是双向循环链表，和单项的类似<br><img src="/img/2017-12/linkedlist/doubleCycleList.jpg" alt="双向循环链表"></p>
-<a id="more"></a> 
 <h2 id="LinkedList的初始化"><a href="#LinkedList的初始化" class="headerlink" title="LinkedList的初始化"></a>LinkedList的初始化</h2><p>相对与ArrayList,LinkedList的构造函数少的可怜，除了将带Collection参数的构造函数外，主要的就是</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Constructs an empty list.</span><br><span class="line"> */</span><br><span class="line">public LinkedList() &#123;&#125;</span><br></pre></td></tr></table></figure>
 <p>那为什么只是空的构造函数呢？只好来看看成员变量</p>
@@ -293,7 +294,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Java%EF%BC%8CList%EF%BC%8CJdk/" rel="tag"># Java，List，Jdk</a>
+              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/List/" rel="tag"># List</a>
+              <a href="/tags/Jdk/" rel="tag"># Jdk</a>
           </div>
 
         
@@ -360,7 +363,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -371,7 +374,7 @@
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>

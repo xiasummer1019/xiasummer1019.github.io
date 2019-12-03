@@ -59,7 +59,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2019-06&#x2F;victoria&#x2F;start.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2019-06&#x2F;victoria&#x2F;result1.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2019-06&#x2F;victoria&#x2F;5mSelect.jpg">
-<meta property="og:updated_time" content="2019-11-06T09:29:27.702Z">
+<meta property="og:updated_time" content="2019-11-25T03:48:53.757Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;2019-06&#x2F;victoria&#x2F;help.jpg">
 
@@ -222,7 +222,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-06 17:29:27" itemprop="dateModified" datetime="2019-11-06T17:29:27+08:00">2019-11-06</time>
+                <time title="修改时间：2019-11-25 11:48:53" itemprop="dateModified" datetime="2019-11-25T11:48:53+08:00">2019-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,8 +252,9 @@
 <p>时序数据是指时间序列数据。时间序列数据是同一统一指标按时间顺序记录的数据列。在同一数据列中的各个数据必须是同口径的，要求具有可比性。时序数据可以是时期数，也可以时点数。时间序列分析的目的是通过找出样本内时间序列的统计特性和发展规律性，构建时间序列模型，进行样本外预测。</p>
 </blockquote>
 <p>可以简单理解为一组随时间变化的数据，比如cpu的占用率，内存占用率等等<br>一般的时序数据库由database，measurement（类比table），point（类比一列数据组成）<br>而point则是由时间戳（time）、数据（field）、标签（tag）组成。<br>time：存入的时间戳，一般自动生成<br>field：记录值，一般随时间变化。e.g.温度，速度，湿度，高度，cpu负载…<br>tag: 索引值，不随时间变化的值。机器的ip，地区，飞机的架次…  </p>
-<a id="more"></a> 
 <h2 id="victoria-简介"><a href="#victoria-简介" class="headerlink" title="victoria 简介"></a>victoria 简介</h2><p>首先附上github地址：<a href="https://github.com/VictoriaMetrics/VictoriaMetrics.github.io" target="_blank" rel="noopener">victoria</a><br>支持单节点，集群方式部署，两种版本均开源。     </p>
+<a id="more"></a> 
+
 <h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
 <li>可以作为Prometheus的远端存储，有<a href="https://github.com/VictoriaMetrics/VictoriaMetrics/releases" target="_blank" rel="noopener">执行文件</a>，<a href="https://hub.docker.com/r/victoriametrics/victoria-metrics/" target="_blank" rel="noopener">docker</a>，<a href="https://github.com/VictoriaMetrics/VictoriaMetrics" target="_blank" rel="noopener">源码</a>三种方式可以获取victoria。<br>支持 <a href="https://prometheus.io/docs/prometheus/latest/querying/api/" target="_blank" rel="noopener">Prometheus querying API</a>的查询语法,并且扩展了PromQL：<a href="https://github.com/VictoriaMetrics/VictoriaMetrics/wiki/ExtendedPromQL" target="_blank" rel="noopener">ExtendedPromQL</a></li>
 <li>性能<br>官方宣称在insert和select时比InfluxDB 和 TimescaleDB表现好20倍；<br>百万级别的高基数（类比mysql distinct）数据内存使用量比 InfluxDB 少10倍；<br>比TimescaleDB可以多存储70倍的数据；<br>针对垃圾硬盘和高延迟网络做了针对性的优化；<br>单节点就可以替代Thanos, Uber M3, Cortex, InfluxDB or TimescaleDB等数据库集群版。</li>
@@ -380,8 +381,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2018/08/20/es-manage/" rel="prev" title="es template">
-      <i class="fa fa-chevron-left"></i> es template
+    <a href="/2018/11/25/jvm-class-loading/" rel="prev" title="jvm-class-loading">
+      <i class="fa fa-chevron-left"></i> jvm-class-loading
     </a></div>
       <div class="post-nav-item"></div>
     </div>
@@ -435,7 +436,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -446,7 +447,7 @@
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
