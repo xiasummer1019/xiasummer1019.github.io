@@ -183,7 +183,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xiasummer1019.github.io/2019/08/28/victoria-metrics/">
+    <link itemprop="mainEntityOfPage" href="https://xiasummer1019.github.io/2021/03/19/spark-graphx/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -197,7 +197,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/08/28/victoria-metrics/" class="post-title-link" itemprop="url">victoria_metrics</a>
+            <a href="/2021/03/19/spark-graphx/" class="post-title-link" itemprop="url">spark_graphx</a>
         </h1>
 
         <div class="post-meta">
@@ -207,14 +207,287 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-08-28 15:28:27" itemprop="dateCreated datePublished" datetime="2019-08-28T15:28:27+08:00">2019-08-28</time>
+              <time title="创建时间：2021-03-19 17:53:32" itemprop="dateCreated datePublished" datetime="2021-03-19T17:53:32+08:00">2021-03-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-25 11:48:53" itemprop="dateModified" datetime="2019-11-25T11:48:53+08:00">2019-11-25</time>
+                <time title="修改时间：2021-04-12 17:36:33" itemprop="dateModified" datetime="2021-04-12T17:36:33+08:00">2021-04-12</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="图计算和优化"><a href="#图计算和优化" class="headerlink" title="图计算和优化"></a>图计算和优化</h1><h2 id="什么是图计算？"><a href="#什么是图计算？" class="headerlink" title="什么是图计算？"></a>什么是图计算？</h2><p>图是由顶点集合(vertex)及顶点间的关系集合（边edge）组成的一种数据结构。<br>简单来说就是关联关系的抽象，将关系串联起来的一个关系网络。<br>在日常的关系中，类比用户和用户之间的关系，用户和设备之前的关系。<br>例如好友关系如下：  </p>
+<table>
+<thead>
+<tr>
+<th align="center">id</th>
+<th align="center">user</th>
+<th align="center">id</th>
+<th align="center">user</th>
+<th align="center">关系</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">张三</td>
+<td align="center">2</td>
+<td align="center">李四</td>
+<td align="center">关注</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">张三</td>
+<td align="center">3</td>
+<td align="center">王五</td>
+<td align="center">关注</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">李四</td>
+<td align="center">3</td>
+<td align="center">王五</td>
+<td align="center">关注</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">王五</td>
+<td align="center">4</td>
+<td align="center">赵六</td>
+<td align="center">关注</td>
+</tr>
+</tbody></table>
+<p>实际的图是这样的：<br><img src="/img/spark-graphx/init.jpg" alt="init"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/19/spark-graphx/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiasummer1019.github.io/2020/09/10/click-house/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiasummer1019的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/10/click-house/" class="post-title-link" itemprop="url">click_house</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-10 14:28:03" itemprop="dateCreated datePublished" datetime="2020-09-10T14:28:03+08:00">2020-09-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-12 16:05:05" itemprop="dateModified" datetime="2021-04-12T16:05:05+08:00">2021-04-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/click-house/" itemprop="url" rel="index">
+                    <span itemprop="name">click_house</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h2><p>带u的代表无符号  </p>
+<table>
+<thead>
+<tr>
+<th align="center">ck</th>
+<th align="center">mysql</th>
+<th align="center">hive</th>
+<th align="center">长度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">UInt8</td>
+<td align="center">byte</td>
+<td align="center">-</td>
+<td align="center">[0 : 255]</td>
+</tr>
+<tr>
+<td align="center">UInt16</td>
+<td align="center">short</td>
+<td align="center">-</td>
+<td align="center">[0 : 65535]</td>
+</tr>
+<tr>
+<td align="center">UInt32</td>
+<td align="center">int</td>
+<td align="center">-</td>
+<td align="center">[0 : 4294967295]</td>
+</tr>
+<tr>
+<td align="center">UInt64</td>
+<td align="center">long</td>
+<td align="center">-</td>
+<td align="center">[0 : 18446744073709551615]</td>
+</tr>
+<tr>
+<td align="center">Int8</td>
+<td align="center">byte</td>
+<td align="center">TINYINT</td>
+<td align="center">[-128 : 127]</td>
+</tr>
+<tr>
+<td align="center">Int16</td>
+<td align="center">short</td>
+<td align="center">SMALLINT</td>
+<td align="center">[-32768 : 32767]</td>
+</tr>
+<tr>
+<td align="center">Int32</td>
+<td align="center">int</td>
+<td align="center">INT</td>
+<td align="center">[-2147483648 : 2147483647]</td>
+</tr>
+<tr>
+<td align="center">Int64</td>
+<td align="center">long</td>
+<td align="center">BIGINT</td>
+<td align="center">[-9223372036854775808 : 9223372036854775807]</td>
+</tr>
+<tr>
+<td align="center">Float32</td>
+<td align="center">float</td>
+<td align="center">float</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">Float64</td>
+<td align="center">double</td>
+<td align="center">double</td>
+<td align="center">-</td>
+</tr>
+</tbody></table>
+<h2 id="布尔型"><a href="#布尔型" class="headerlink" title="布尔型"></a>布尔型</h2><p>没有单独的类型来存储布尔值。可以使用 UInt8 类型，取值限制为 0 或 1。<br>或者用枚举类表示。  </p>
+<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><p>Enum8：’String’=Int8<br>Enum16：’String’=Int16<br>字符串需要用引号包含 </p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>Array(T) T代表泛型，可以是任何类型。<br>可以使用array()函数和中括号来创建数组，不建议多维数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO array_t VALUES([1，2，3，4，5])，(array(11，22，33，44，55))</span><br></pre></td></tr></table></figure>
+
+<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>元组，其中每个元素都有单独的类型<br><code>Tuple(Int8， String， Array(String)， Array(Int8))</code></p>
+<h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><p>Date<br>用两个字节存储，表示从 1970-01-01 (无符号) 到当前的日期值， 最小值输出为0000-00-00。</p>
+<h2 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h2><p>DateTime<br>用四个字节（无符号的）存储 Unix 时间戳，允许存储与日期类型相同的范围内的值。最小值为 0000-00-00 00:00:00，时间戳类型值精确到秒。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/10/click-house/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiasummer1019.github.io/2020/08/28/victoria-metrics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiasummer1019的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/28/victoria-metrics/" class="post-title-link" itemprop="url">victoria_metrics</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-28 15:28:27" itemprop="dateCreated datePublished" datetime="2020-08-28T15:28:27+08:00">2020-08-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-24 15:22:21" itemprop="dateModified" datetime="2020-11-24T15:22:21+08:00">2020-11-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -247,12 +520,186 @@
 <h2 id="victoria-简介"><a href="#victoria-简介" class="headerlink" title="victoria 简介"></a>victoria 简介</h2><p>首先附上github地址：<a href="https://github.com/VictoriaMetrics/VictoriaMetrics.github.io" target="_blank" rel="noopener">victoria</a><br>支持单节点，集群方式部署，两种版本均开源。     </p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/08/28/victoria-metrics/#more" rel="contents">
+              <a class="btn" href="/2020/08/28/victoria-metrics/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiasummer1019.github.io/2020/04/21/leetcode15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiasummer1019的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/21/leetcode15/" class="post-title-link" itemprop="url">leetcode15</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-21 11:08:43 / 修改时间：15:37:05" itemprop="dateCreated datePublished" datetime="2020-04-21T11:08:43+08:00">2020-04-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="三数之和"><a href="#三数之和" class="headerlink" title="三数之和"></a>三数之和</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。</span><br><span class="line"></span><br><span class="line">注意：答案中不可以包含重复的三元组。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">给定数组 nums = [-1, 0, 1, 2, -1, -4]，</span><br><span class="line"></span><br><span class="line">满足要求的三元组集合为：</span><br><span class="line">[</span><br><span class="line">  [-1, 0, 1],</span><br><span class="line">  [-1, -1, 2]</span><br><span class="line">]</span><br><span class="line">链接：https://leetcode-cn.com/problems/3sum</span><br></pre></td></tr></table></figure>
+
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>例如[-1, 0, 1, 2, -1, -4]  </p>
+<ol>
+<li>先排序，从小到大[-4 ,-1 ,-1 ,0 ,1 ,2 ]</li>
+<li>选取一个索引i的值nums[i]当初始值a,其他算从num[i+1]为b和排序好的数组末尾num[n-1]为c<br>如果三者=0，这存入，bc均移动一位；如果&gt;0,则c向后退一位&lt;0则b前进一位；<br>选i=0; a = -4,b= -1,c = 2, a+b+c&lt;0;b前进b=0,c=2,a+b+c&lt;0… 无解；<br>选i=1; a = -1,b=-1,c = 2 ,a+b+c = 0,记录[-1, -1, 2];b = -1;c = 1,记录[-1, 0, 1]…<br>选i=2;和情况1相似，跳过<br>选i=3; a +b +c&gt;0<br>综合结果为：[[-1, 0, 1],[-1, -1, 2]]   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">public static List&lt;List&lt;Integer&gt;&gt; threeSum2(int[] nums) &#123;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; ans = new ArrayList();</span><br><span class="line">        if (nums == null || nums.length &lt; 3) &#123;</span><br><span class="line">            return ans;</span><br><span class="line">        &#125;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        int N = nums.length - 1;</span><br><span class="line">        for (int i = 0; i &lt; N - 1; i++) &#123;</span><br><span class="line">            if (nums[i] &gt; 0) break;</span><br><span class="line">            //去重</span><br><span class="line">            if (i &gt; 0 &amp;&amp; nums[i] == nums[i - 1]) continue;</span><br><span class="line">            int L = i + 1;</span><br><span class="line">            int R = N ;</span><br><span class="line">            while (L&lt;R)&#123;</span><br><span class="line">                int sum = nums[i] + nums[L] + nums[R];</span><br><span class="line">                if (sum == 0) &#123;</span><br><span class="line">                    ans.add(Arrays.asList(nums[i],nums[L], nums[R]));</span><br><span class="line">                    while (L &lt; R &amp;&amp; nums[L] == nums[L + 1]) L++;</span><br><span class="line">                    while (L &lt; R &amp;&amp; nums[R] == nums[R - 1]) R--;</span><br><span class="line">                    L++;</span><br><span class="line">                    R--;</span><br><span class="line">                &#125;else if(sum&gt;0)&#123;</span><br><span class="line">                    R--;</span><br><span class="line">                &#125;else &#123;</span><br><span class="line">                    L++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="四数之和"><a href="#四数之和" class="headerlink" title="四数之和"></a>四数之和</h1></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">给定一个包含 n 个整数的数组 nums 和一个目标值 target，判断 nums 中是否存在四个元素 a，b，c 和 d ，使得 a + b + c + d 的值与 target 相等？找出所有满足条件且不重复的四元组。</span><br><span class="line"></span><br><span class="line">注意：</span><br><span class="line"></span><br><span class="line">答案中不可以包含重复的四元组。</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">给定数组 nums = [1, 0, -1, 0, -2, 2]，和 target = 0。</span><br><span class="line"></span><br><span class="line">满足要求的四元组集合为：</span><br><span class="line">[</span><br><span class="line">  [-1,  0, 0, 1],</span><br><span class="line">  [-2, -1, 1, 2],</span><br><span class="line">  [-2,  0, 0, 2]</span><br><span class="line">]</span><br><span class="line">链接：https://leetcode-cn.com/problems/4sum</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiasummer1019.github.io/2020/04/21/leetcode3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiasummer1019的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/21/leetcode3/" class="post-title-link" itemprop="url">leetcode3</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-21 09:47:41 / 修改时间：10:56:26" itemprop="dateCreated datePublished" datetime="2020-04-21T09:47:41+08:00">2020-04-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="无重复字符的最长子串"><a href="#无重复字符的最长子串" class="headerlink" title="无重复字符的最长子串"></a>无重复字符的最长子串</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。</span><br><span class="line"></span><br><span class="line">示例 1:</span><br><span class="line"></span><br><span class="line">输入: &quot;abcabcbb&quot;</span><br><span class="line">输出: 3 </span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;abc&quot;，所以其长度为 3。</span><br><span class="line">示例 2:</span><br><span class="line"></span><br><span class="line">输入: &quot;bbbbb&quot;</span><br><span class="line">输出: 1</span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;b&quot;，所以其长度为 1。</span><br><span class="line">示例 3:</span><br><span class="line"></span><br><span class="line">输入: &quot;pwwkew&quot;</span><br><span class="line">输出: 3</span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;wke&quot;，所以其长度为 3。</span><br><span class="line">     请注意，你的答案必须是 子串 的长度，&quot;pwke&quot; 是一个子序列，不是子串。</span><br><span class="line">https://leetcode-cn.com/problems/longest-substring-without-repeating-characters</span><br></pre></td></tr></table></figure>
+
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><ol>
+<li>假设没有重复的情况：s = abcd，则直接返回字符串长度4.       </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return s.length();</span><br></pre></td></tr></table></figure>
+
+<p>实际的情况就是遍历字符串的长度  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public int lengthOfLongestSubstring1(String s) &#123;</span><br><span class="line">    int max = 0;</span><br><span class="line">    int start = 0;</span><br><span class="line">    for (int i = 0; i &lt; s.length(); i++) &#123;</span><br><span class="line">        max = Math.max(max, i - start + 1);</span><br><span class="line">    &#125;</span><br><span class="line">    return max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>每一次的循环max的值为：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 0-0+1</span><br><span class="line">2 1-0+1</span><br><span class="line">3 2-0+1</span><br><span class="line">4 3-0+1</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>假设有一个重复：s = abcda ，到字符d为止和情况1相同，但是多了字符a，则特殊处理。<br>&ensp;&ensp;&ensp;&ensp;s&ensp;: a b c d a<br>index&ensp;: 0 1 2 3 4   </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public int lengthOfLongestSubstring1(String s) &#123;</span><br><span class="line">    int max = 0;</span><br><span class="line">    int start = 0;</span><br><span class="line">    int aIndex = -1;</span><br><span class="line">    for (int i = 0; i &lt; s.length(); i++) &#123;</span><br><span class="line">        if (s.charAt(i) == &apos;a&apos;) &#123;</span><br><span class="line">            if (aIndex == -1) &#123;</span><br><span class="line">                //获取第一个a的索引值,保证没有初始化</span><br><span class="line">                aIndex = i + 1;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                //非重复串，需要从上一个不重复的字符开始，则是第一个a的索引的后一位</span><br><span class="line">                start = aIndex;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        max = Math.max(max, i - start + 1);</span><br><span class="line">    &#125;</span><br><span class="line">    return max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>每一次的max循环结果：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1 0-0+1</span><br><span class="line">2 1-0+1</span><br><span class="line">3 2-0+1</span><br><span class="line">4 3-0+1</span><br><span class="line">4 4-1+1</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>那么多个重复串的情况：s = abcdab 。需要记录每一个字符串上一次出现的次数，这样才能计算后面重复字符的最大长度。  </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public int lengthOfLongestSubstring1(String s) &#123;</span><br><span class="line">    int max = 0;</span><br><span class="line">    int start = 0;</span><br><span class="line">    //hash表 字典</span><br><span class="line">    Map&lt;Character, Integer&gt; map = new HashMap&lt;&gt;(32);</span><br><span class="line">    for (int i = 0; i &lt; s.length(); i++) &#123;</span><br><span class="line">        char c = s.charAt(i);</span><br><span class="line">        if (map.containsKey(c)) &#123;</span><br><span class="line">            start = Math.max(map.get(c), start);</span><br><span class="line">        &#125;</span><br><span class="line">        max = Math.max(max, i - start + 1);</span><br><span class="line">        map.put(c, i + 1);</span><br><span class="line">    &#125;</span><br><span class="line">    return max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中map里面的值是：</p>
+<p><code>a-&gt;1,b-&gt;2</code> </p>
+<p>每一次的max循环结果：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1 0-0+1</span><br><span class="line">2 1-0+1</span><br><span class="line">3 2-0+1</span><br><span class="line">4 3-0+1</span><br><span class="line">4 4-1+1</span><br><span class="line">4 5-2+1</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -689,354 +1136,12 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xiasummer1019.github.io/2017/12/02/LinkedList/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiasummer1019的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/12/02/LinkedList/" class="post-title-link" itemprop="url">LinkedList</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-12-02 11:47:03" itemprop="dateCreated datePublished" datetime="2017-12-02T11:47:03+08:00">2017-12-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-25 11:52:13" itemprop="dateModified" datetime="2019-11-25T11:52:13+08:00">2019-11-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JDK/" itemprop="url" rel="index">
-                    <span itemprop="name">JDK</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="LinkedList-JDK1-8-另一个动态的“数组”"><a href="#LinkedList-JDK1-8-另一个动态的“数组”" class="headerlink" title="LinkedList JDK1.8 另一个动态的“数组”"></a>LinkedList JDK1.8 另一个动态的“数组”</h1><p>jdk是最好的老师</p>
-<h2 id="链表，循环链表，双向链表"><a href="#链表，循环链表，双向链表" class="headerlink" title="链表，循环链表，双向链表"></a>链表，循环链表，双向链表</h2><h3 id="什么是链表？"><a href="#什么是链表？" class="headerlink" title="什么是链表？"></a>什么是链表？</h3><p>一般来说一个简单的数组为：Car[] car = new Car[5] ;<br>那么在堆内存中他们的内存地址一般是连续的：<br><img src="/img/2017-12/linkedlist/array.jpg" alt="数组"><br>但是如果随机创建了Car car0,car1,…car4这些对象，那么怎么样将他们串联起来呢？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public Car &#123;</span><br><span class="line">    public String Name;</span><br><span class="line">    public Car next;//指向下一个节点</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/img/2017-12/linkedlist/singleLink.jpg" alt="单链表"><br>这就是一个单向链表，在单向链表中知道第一个对象，就可以找到下面一个对象，以此类推，直到最后一个元素。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/12/02/LinkedList/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xiasummer1019.github.io/2017/11/13/ArraryList/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiasummer1019的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/11/13/ArraryList/" class="post-title-link" itemprop="url">ArraryList</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-13 15:47:47" itemprop="dateCreated datePublished" datetime="2017-11-13T15:47:47+08:00">2017-11-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-25 11:53:59" itemprop="dateModified" datetime="2019-11-25T11:53:59+08:00">2019-11-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JDK/" itemprop="url" rel="index">
-                    <span itemprop="name">JDK</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="ArraryList-JDK1-8-一个可变的数组"><a href="#ArraryList-JDK1-8-一个可变的数组" class="headerlink" title="ArraryList JDK1.8 一个可变的数组"></a>ArraryList JDK1.8 一个可变的数组</h1><p>jdk是最好的老师</p>
-<h2 id="ArraryList-初始化"><a href="#ArraryList-初始化" class="headerlink" title="ArraryList 初始化"></a>ArraryList 初始化</h2><p>先看一段代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class ListTest &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        List&lt;String&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">        list.add(&quot;123&quot;);</span><br><span class="line">        list.add(&quot;234&quot;);</span><br><span class="line">        System.out.println(&quot;size:&quot;+list.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/11/13/ArraryList/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xiasummer1019.github.io/2017/11/10/rsa%E5%8A%A0%E5%AF%86%E7%99%BB%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiasummer1019的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/11/10/rsa%E5%8A%A0%E5%AF%86%E7%99%BB%E5%BD%95/" class="post-title-link" itemprop="url">rsa加密登录</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-10 14:55:58" itemprop="dateCreated datePublished" datetime="2017-11-10T14:55:58+08:00">2017-11-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-25 11:52:46" itemprop="dateModified" datetime="2019-11-25T11:52:46+08:00">2019-11-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><h2 id="整理以前所学"><a href="#整理以前所学" class="headerlink" title="整理以前所学"></a>整理以前所学</h2><p>想找个地方把学的东西整理一下</p>
-</li>
-<li><h2 id="为什么不用MD5"><a href="#为什么不用MD5" class="headerlink" title="为什么不用MD5"></a>为什么不用MD5</h2><p>Md5是数字签名，基本不可逆。<br>假设你的初始密码是 <code>123456</code><br>在前端经过MD5加密之后变成<code>QWEASD</code><br>传到后台，可能经过其他处理储存到数据库<br>但是一旦中间人看到你的<code>QWEASD</code><br>并不需要知道你的原密码也能附加一些参数调用相应的接口<br>者并不是我们所希望的</p>
-</li>
-<li><h2 id="RSA-非对称加密算法"><a href="#RSA-非对称加密算法" class="headerlink" title="RSA 非对称加密算法"></a>RSA 非对称加密算法</h2><p><a href="http://www.ruanyifeng.com/blog/2013/06/rsa_algorithm_part_one.html" target="_blank" rel="noopener">阮一峰</a>大神的介绍<br>简单来说就是公钥加密，私钥解密，公钥和私钥不同<br>不过鉴于生成秘钥，加解密的效率过慢，只能用于少量的数据，所以用于密码传输正合适</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/11/10/rsa%E5%8A%A0%E5%AF%86%E7%99%BB%E5%BD%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xiasummer1019.github.io/2017/11/09/github-hexo-Blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiasummer1019的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/11/09/github-hexo-Blog/" class="post-title-link" itemprop="url">github hexo Blog</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-11-09 16:37:38" itemprop="dateCreated datePublished" datetime="2017-11-09T16:37:38+08:00">2017-11-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-25 11:52:46" itemprop="dateModified" datetime="2019-11-25T11:52:46+08:00">2019-11-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo%E6%95%99%E7%A8%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo教程</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2></li>
-</ul>
-<p>1.github账号（必须，没有其他的也能建一个简单的首页）<br>2.node.js的<a href="https://nodejs.org/en/" target="_blank" rel="noopener">安装包</a><br>3.git的<a href="https://github.com/git-for-windows/git" target="_blank" rel="noopener">安装包</a><br>4.开始安装吧。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/11/09/github-hexo-Blog/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1079,18 +1184,18 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -1125,7 +1230,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

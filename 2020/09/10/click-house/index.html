@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="xiasummer1019的博客" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://xiasummer1019.github.io').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="数据类型数字带u的代表无符号      ck mysql hive 长度    UInt8 byte - [0 : 255]   UInt16 short - [0 : 65535]   UInt32 int - [0 : 4294967295]   UInt64 long - [0 : 18446744073709551615]   Int8 byte TINYINT [-128 : 127]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="click_house">
+<meta property="og:url" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;2020&#x2F;09&#x2F;10&#x2F;click-house&#x2F;index.html">
+<meta property="og:site_name" content="xiasummer1019的博客">
+<meta property="og:description" content="数据类型数字带u的代表无符号      ck mysql hive 长度    UInt8 byte - [0 : 255]   UInt16 short - [0 : 65535]   UInt32 int - [0 : 4294967295]   UInt64 long - [0 : 18446744073709551615]   Int8 byte TINYINT [-128 : 127]">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-04-12T08:05:05.658Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://xiasummer1019.github.io/2020/09/10/click-house/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>click_house | xiasummer1019的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">xiasummer1019的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">菜鸡的成长之路</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiasummer1019.github.io/2020/09/10/click-house/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiasummer1019的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          click_house
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-10 14:28:03" itemprop="dateCreated datePublished" datetime="2020-09-10T14:28:03+08:00">2020-09-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-12 16:05:05" itemprop="dateModified" datetime="2021-04-12T16:05:05+08:00">2021-04-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/click-house/" itemprop="url" rel="index">
+                    <span itemprop="name">click_house</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h2><p>带u的代表无符号  </p>
+<table>
+<thead>
+<tr>
+<th align="center">ck</th>
+<th align="center">mysql</th>
+<th align="center">hive</th>
+<th align="center">长度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">UInt8</td>
+<td align="center">byte</td>
+<td align="center">-</td>
+<td align="center">[0 : 255]</td>
+</tr>
+<tr>
+<td align="center">UInt16</td>
+<td align="center">short</td>
+<td align="center">-</td>
+<td align="center">[0 : 65535]</td>
+</tr>
+<tr>
+<td align="center">UInt32</td>
+<td align="center">int</td>
+<td align="center">-</td>
+<td align="center">[0 : 4294967295]</td>
+</tr>
+<tr>
+<td align="center">UInt64</td>
+<td align="center">long</td>
+<td align="center">-</td>
+<td align="center">[0 : 18446744073709551615]</td>
+</tr>
+<tr>
+<td align="center">Int8</td>
+<td align="center">byte</td>
+<td align="center">TINYINT</td>
+<td align="center">[-128 : 127]</td>
+</tr>
+<tr>
+<td align="center">Int16</td>
+<td align="center">short</td>
+<td align="center">SMALLINT</td>
+<td align="center">[-32768 : 32767]</td>
+</tr>
+<tr>
+<td align="center">Int32</td>
+<td align="center">int</td>
+<td align="center">INT</td>
+<td align="center">[-2147483648 : 2147483647]</td>
+</tr>
+<tr>
+<td align="center">Int64</td>
+<td align="center">long</td>
+<td align="center">BIGINT</td>
+<td align="center">[-9223372036854775808 : 9223372036854775807]</td>
+</tr>
+<tr>
+<td align="center">Float32</td>
+<td align="center">float</td>
+<td align="center">float</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">Float64</td>
+<td align="center">double</td>
+<td align="center">double</td>
+<td align="center">-</td>
+</tr>
+</tbody></table>
+<h2 id="布尔型"><a href="#布尔型" class="headerlink" title="布尔型"></a>布尔型</h2><p>没有单独的类型来存储布尔值。可以使用 UInt8 类型，取值限制为 0 或 1。<br>或者用枚举类表示。  </p>
+<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><p>Enum8：’String’=Int8<br>Enum16：’String’=Int16<br>字符串需要用引号包含 </p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>Array(T) T代表泛型，可以是任何类型。<br>可以使用array()函数和中括号来创建数组，不建议多维数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO array_t VALUES([1，2，3，4，5])，(array(11，22，33，44，55))</span><br></pre></td></tr></table></figure>
+
+<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>元组，其中每个元素都有单独的类型<br><code>Tuple(Int8， String， Array(String)， Array(Int8))</code></p>
+<h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><p>Date<br>用两个字节存储，表示从 1970-01-01 (无符号) 到当前的日期值， 最小值输出为0000-00-00。</p>
+<h2 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h2><p>DateTime<br>用四个字节（无符号的）存储 Unix 时间戳，允许存储与日期类型相同的范围内的值。最小值为 0000-00-00 00:00:00，时间戳类型值精确到秒。</p>
+<a id="more"></a> 
+
+<h1 id="表引擎"><a href="#表引擎" class="headerlink" title="表引擎"></a>表引擎</h1><h2 id="Log系列"><a href="#Log系列" class="headerlink" title="Log系列"></a>Log系列</h2><h3 id="TinyLog引擎"><a href="#TinyLog引擎" class="headerlink" title="TinyLog引擎"></a>TinyLog引擎</h3><p>TinyLog 是最简单的表引擎， 它将数据保存到磁盘. 每个字段都以单独压缩文件形式保存. 当写入数据时， 数据追加到文件的末尾.<br>并发数据访问不限制任何形式；<br>如果你同时对此表进行读写，如从表中读取数据的同时写入数据到此表，那么读操作将会报错。<br>如果 <strong>同时并行</strong> 往表里写入数据，那么数据将<strong>损坏</strong>.<br>TinyLog支持并发读，但是不支持并发写与并发读写，所以TinyLog表适合存放一些静态信息或者变化缓慢的信息。有点像数仓中的缓慢变化维度。  </p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p>一次写入，一写多读的应用场景。<br>适合很多小表操作(100万行左右的表)。<br>不支持索引。<br>比Log更简单(使用文件更小)。<br>TinyLog 表经常作为中间表，用于数据的微批量处理。  </p>
+<h3 id="Log引擎"><a href="#Log引擎" class="headerlink" title="Log引擎"></a>Log引擎</h3><p>这种引擎跟 TinyLog 基本一致<br>它的改进点，是加了一个 __marks.mrk 文件，里面记录了每个数据块的偏移<br>这样做的一个用处，就是可以准确地切分读的范围，从而使用并发读取成为可能<br>但是，它是不能支持并发写的，一个写操作会阻塞其它读写操作<br>Log 不支持索引，同时因为有一个 __marks.mrk 的冗余数据，所以在写入数据时，一旦出现问题，这个表就废了  </p>
+<h2 id="Special系列"><a href="#Special系列" class="headerlink" title="Special系列"></a>Special系列</h2><h3 id="Memory引擎"><a href="#Memory引擎" class="headerlink" title="Memory引擎"></a>Memory引擎</h3><p>Memory 引擎以未压缩的形式将数据存储在内存中。数据完全以读取时获得的形式存储。<br>在简单查询上达到最大生产率（超过10 GB /秒），因为没有磁盘读取，不需要解压缩或反序列化数据。<br>（值得注意的是，在许多情况下，与 MergeTree 引擎的性能几乎一样高）。<br>从这张表中读取是很轻松的。并发数据访问是同步的。锁范围小：读写操作不会相互阻塞。不支持索引。阅读是并行化的。<br>它可用于小数据量(1亿条左右)的高速读取数据场景或用于测试环境，可用于外部数据的临时表查询和实现 GLOBAL IN 操作。  </p>
+<h3 id="Merge"><a href="#Merge" class="headerlink" title="Merge"></a>Merge</h3><p>合并查询引擎，主要用于同时并行查询多张表。Merge引擎本身不存数据，类似于关系型数据库的视图。<br>重新启动服务器时，表中的数据消失，表将变为空。通常，使用此表引擎是不合理的。（值得注意的是，在许多情况下，与 MergeTree 引擎的性能几乎一样高）。  </p>
+<h2 id="LSM-Tree-结构"><a href="#LSM-Tree-结构" class="headerlink" title="LSM-Tree 结构"></a>LSM-Tree 结构</h2><p>LSM的思想，在于对数据的修改增量保持在内存中，达到指定的限制后将这些修改操作批量写入到磁盘中，相比较于写入操作的高性能，读取需要合并内存中最近修改的操作和磁盘中历史的数据，即需要先看是否在内存中，若没有命中，还要访问磁盘文件。<br>原理：把一颗大树拆分成N棵小树，数据先写入内存中，随着小树越来越大，内存的小树会flush到磁盘中。磁盘中的树定期做合并操作，合并成一棵大树，以优化读性能。</p>
+<h2 id="重头戏-MergeTree-系列"><a href="#重头戏-MergeTree-系列" class="headerlink" title="重头戏 MergeTree 系列"></a>重头戏 MergeTree 系列</h2><h3 id="MergeTree"><a href="#MergeTree" class="headerlink" title="MergeTree"></a>MergeTree</h3><p>MergeTree表引擎主要用于海量数据分析，支持数据分区、存储有序、主键索引、稀疏索引、数据TTL等。<br>MergeTree支持所有ClickHouse SQL语法，但是有些功能与MySQL并不一致，比如在MergeTree中主键并不用于去重。<br>MergeTree 引擎支持索引，通过主键和日期来构建索引， 同时提供数据的实时更新能力。 这是目前 ClickHouse处理能力最好的引擎。 注意：不要和 Merge 引擎相混淆。</p>
+<pre><code>
+CREATE TABLE [IF NOT EXISTS] [db.]table_name [ON CLUSTER cluster]
+(
+    name1 [type1] [DEFAULT|MATERIALIZED|ALIAS expr1] [TTL expr1],
+    name2 [type2] [DEFAULT|MATERIALIZED|ALIAS expr2] [TTL expr2],
+    ...
+    INDEX index_name1 expr1 TYPE type1(...) GRANULARITY value1,
+    INDEX index_name2 expr2 TYPE type2(...) GRANULARITY value2
+) ENGINE = MergeTree()
+ORDER BY expr
+[PARTITION BY expr]
+[PRIMARY KEY expr]
+[SAMPLE BY expr]
+[TTL expr [DELETE|TO DISK &apos;xxx&apos;|TO VOLUME &apos;xxx&apos;], ...]
+[SETTINGS name=value, ...]
+
+解释：
+必填项：`__`
+1.ENGINE：创建MergeTree的表引擎指定ENGINE = MergeTree()
+2.ORDER BY语句：sorting key 排序键，用于指定在一个数据片段内数据以何种标准排序。默认情况下是主键primary key
+与排序键相同。排序键可以单个列字段，也可以多个列字段。
+选填项：
+1.PARTITION BY ：分区键 用于指定表数据以何种标准进行分区。分区键可以单个列字段，也可以是通过元祖形式使用的多个列字段，还可以支持使用列表达式。
+若不声明分区键则clickhouse会生成一个名为all的分区。合理使用分区 可以有效减少查询数据文件的扫描范围。
+2.primary key：主键 声明后会按照主键字段生成一级索引，用于加速表查询。默认情况下主键与排序键相同，
+所以通常
+直接使用order by 指定主键，无须刻意通过primary key声明。在一般情况下，在单个数据片段内 数据与一级索引
+以相同的规则升序排列。
+MergeTree主键允许存在重复数据（ReplacingMergeTree可以去重）。
+
+3.sample by：抽样表达式，用于声明数据以何种标准进行采样。若使用了此配置选项则在主键的配置中也需要声明同样的表达式。
+抽样表达式需要配合sample by 子查询使用，这项功能对于选取抽样数据十分有用。
+4.TTL：指定表级别的数据存活策略
+5.settting部分：
+   index_granularity,：默认值8192，表示索引的粒度，即MergeTree的索引在默认情况下，每间隔8192行数据才生成一条索引。通常不需要修改此参数。
+   index_granularity_bytes ：默认值10Mb（10*1024*1024）表示自适应间隔大小的特性，即根据每一批写入数据的体量大小，动态划分间隔大小。设置为0表示不启用自适应功能。
+自19.11版本新增。
+   enable_mixed_granularity_parts ：设置是否开启自适应索引间隔的功能，默认开启。
+   use_minimalistic_part_header_in_zookeeper ：
+   min_merge_bytes_to_use_direct_io ：默认值10 * 1024 * 1024 * 1024 =10M
+   merge_with_ttl_timeout ：默认值1天=86400s 
+   write_final_mark ：
+   merge_max_block_size ：
+   storage_policy ：指定存储策略
+   min_bytes_for_wide_part和min_rows_for_wide_part ：
+</code></pre>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/28/victoria-metrics/" rel="prev" title="victoria_metrics">
+      <i class="fa fa-chevron-left"></i> victoria_metrics
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/03/19/spark-graphx/" rel="next" title="spark_graphx">
+      spark_graphx <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数字"><span class="nav-number">1.1.</span> <span class="nav-text">数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#布尔型"><span class="nav-number">1.2.</span> <span class="nav-text">布尔型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举"><span class="nav-number">1.3.</span> <span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">1.4.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元组"><span class="nav-number">1.5.</span> <span class="nav-text">元组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日期"><span class="nav-number">1.6.</span> <span class="nav-text">日期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间戳"><span class="nav-number">1.7.</span> <span class="nav-text">时间戳</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表引擎"><span class="nav-number">2.</span> <span class="nav-text">表引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Log系列"><span class="nav-number">2.1.</span> <span class="nav-text">Log系列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TinyLog引擎"><span class="nav-number">2.1.1.</span> <span class="nav-text">TinyLog引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特点"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">特点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Log引擎"><span class="nav-number">2.1.2.</span> <span class="nav-text">Log引擎</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Special系列"><span class="nav-number">2.2.</span> <span class="nav-text">Special系列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Memory引擎"><span class="nav-number">2.2.1.</span> <span class="nav-text">Memory引擎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merge"><span class="nav-number">2.2.2.</span> <span class="nav-text">Merge</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSM-Tree-结构"><span class="nav-number">2.3.</span> <span class="nav-text">LSM-Tree 结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重头戏-MergeTree-系列"><span class="nav-number">2.4.</span> <span class="nav-text">重头戏 MergeTree 系列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MergeTree"><span class="nav-number">2.4.1.</span> <span class="nav-text">MergeTree</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiasummer1019" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiasummer1019" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  </div>
+
+        
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=[object Object]&web_id=[object Object]"></script>
+  </div>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

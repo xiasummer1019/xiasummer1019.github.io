@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="xiasummer1019的博客" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://xiasummer1019.github.io').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="图计算和优化什么是图计算？图是由顶点集合(vertex)及顶点间的关系集合（边edge）组成的一种数据结构。简单来说就是关联关系的抽象，将关系串联起来的一个关系网络。在日常的关系中，类比用户和用户之间的关系，用户和设备之前的关系。例如好友关系如下：      id user id user 关系    1 张三 2 李四 关注   1 张三 3 王五 关注   2 李四 3 王五 关注   3 王">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spark_graphx">
+<meta property="og:url" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;2021&#x2F;03&#x2F;19&#x2F;spark-graphx&#x2F;index.html">
+<meta property="og:site_name" content="xiasummer1019的博客">
+<meta property="og:description" content="图计算和优化什么是图计算？图是由顶点集合(vertex)及顶点间的关系集合（边edge）组成的一种数据结构。简单来说就是关联关系的抽象，将关系串联起来的一个关系网络。在日常的关系中，类比用户和用户之间的关系，用户和设备之前的关系。例如好友关系如下：      id user id user 关系    1 张三 2 李四 关注   1 张三 3 王五 关注   2 李四 3 王五 关注   3 王">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;spark-graphx&#x2F;init.jpg">
+<meta property="og:updated_time" content="2021-04-12T09:36:33.833Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;spark-graphx&#x2F;init.jpg">
+
+<link rel="canonical" href="https://xiasummer1019.github.io/2021/03/19/spark-graphx/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>spark_graphx | xiasummer1019的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">xiasummer1019的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">菜鸡的成长之路</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiasummer1019.github.io/2021/03/19/spark-graphx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiasummer1019的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          spark_graphx
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-19 17:53:32" itemprop="dateCreated datePublished" datetime="2021-03-19T17:53:32+08:00">2021-03-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-12 17:36:33" itemprop="dateModified" datetime="2021-04-12T17:36:33+08:00">2021-04-12</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="图计算和优化"><a href="#图计算和优化" class="headerlink" title="图计算和优化"></a>图计算和优化</h1><h2 id="什么是图计算？"><a href="#什么是图计算？" class="headerlink" title="什么是图计算？"></a>什么是图计算？</h2><p>图是由顶点集合(vertex)及顶点间的关系集合（边edge）组成的一种数据结构。<br>简单来说就是关联关系的抽象，将关系串联起来的一个关系网络。<br>在日常的关系中，类比用户和用户之间的关系，用户和设备之前的关系。<br>例如好友关系如下：  </p>
+<table>
+<thead>
+<tr>
+<th align="center">id</th>
+<th align="center">user</th>
+<th align="center">id</th>
+<th align="center">user</th>
+<th align="center">关系</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">张三</td>
+<td align="center">2</td>
+<td align="center">李四</td>
+<td align="center">关注</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">张三</td>
+<td align="center">3</td>
+<td align="center">王五</td>
+<td align="center">关注</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">李四</td>
+<td align="center">3</td>
+<td align="center">王五</td>
+<td align="center">关注</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">王五</td>
+<td align="center">4</td>
+<td align="center">赵六</td>
+<td align="center">关注</td>
+</tr>
+</tbody></table>
+<p>实际的图是这样的：<br><img src="/img/spark-graphx/init.jpg" alt="init"></p>
+<a id="more"></a> 
+
+<h2 id="有向图和无向图"><a href="#有向图和无向图" class="headerlink" title="有向图和无向图"></a>有向图和无向图</h2><p>在上图中的关系，如果是好友关系，那么张三和李四是好友，那他们关系是等价的，所以是无向图。<br>如果是up和普通用户，那么李四关注了赵六。但是赵六并没有关系李四，则他们之间的关系是有向的。</p>
+<h2 id="度、出边、入边、出度、入度"><a href="#度、出边、入边、出度、入度" class="headerlink" title="度、出边、入边、出度、入度"></a>度、出边、入边、出度、入度</h2><table>
+<thead>
+<tr>
+<th align="center">字段</th>
+<th align="center">含义</th>
+<th align="center">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">度</td>
+<td align="center">表示一个顶点的所有边的数量</td>
+<td align="center">张三的度2，赵六是1</td>
+</tr>
+<tr>
+<td align="center">入边</td>
+<td align="center">表示其他顶点指向当前顶点的边</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">出度</td>
+<td align="center">是一个顶点出边的数量</td>
+<td align="center">张三的出度2</td>
+</tr>
+<tr>
+<td align="center">入度</td>
+<td align="center">是一个顶点入边的数量</td>
+<td align="center">张三的入度0</td>
+</tr>
+</tbody></table>
+<h2 id="超步"><a href="#超步" class="headerlink" title="超步"></a>超步</h2><p>在分布式图计算中，图进行迭代计算时，每一轮的迭代叫做一个超步 。<br>例如连通图算法中。需要把有关联的数据联系起来，并以最小的id为子图的id只。<br>其中的步骤为：<br>超步1：<br>0. 初始化自己的id为子图id</p>
+<ol>
+<li>张三发子图id:1往李四、王五</li>
+<li>李四发子图id:2往张三、王五</li>
+<li>王五发子图id:3往张三、李四、赵六</li>
+<li>赵六发子图id:4往王五</li>
+<li>比较收到的消息和本身的子图id做对比，去最小值</li>
+<li>超步1结束  </li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">id</th>
+<th align="center">user</th>
+<th align="center">子图id</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">张三</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">李四</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">王五</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">赵六</td>
+<td align="center">3</td>
+</tr>
+</tbody></table>
+<p>超步2：</p>
+<ol>
+<li>张三发子图id:1往李四、王五</li>
+<li>李四发子图id:1往张三、王五</li>
+<li>王五发子图id:1往张三、李四、赵六</li>
+<li>赵六发子图id:3往王五</li>
+<li>比较收到的消息和本身的子图id做对比，去最小值</li>
+<li>超步2结束  </li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">id</th>
+<th align="center">user</th>
+<th align="center">子图id</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">张三</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">李四</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">王五</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">赵六</td>
+<td align="center">1</td>
+</tr>
+</tbody></table>
+<h2 id="spark-graphx"><a href="#spark-graphx" class="headerlink" title="spark-graphx"></a>spark-graphx</h2><p>spark版本的图计算框架。<br>图的分布式或者并行处理其实是把图拆分成很多的子图，然后分别对这些子图进行计算，计算的时候可以分别迭代进行分阶段的计算。<br>常见的</p>
+<h2 id="边分割（Edge-Cut）"><a href="#边分割（Edge-Cut）" class="headerlink" title="边分割（Edge-Cut）"></a>边分割（Edge-Cut）</h2><p>每个顶点都存储一次，但有的边会被打断分到两台机器上。这样做的好处是节省存储空间；坏处是对图进行基于边的计算时，对于一条两个顶点被分到不同机器上的边来说，要跨机器通信传输数据，内网通信流量大。</p>
+<h2 id="点分割（Vertex-Cut）"><a href="#点分割（Vertex-Cut）" class="headerlink" title="点分割（Vertex-Cut）"></a>点分割（Vertex-Cut）</h2><p>每条边只存储一次，都只会出现在一台机器上。邻居多的点会被复制到多台机器上，增加了存储开销，同时会引发数据同步问题。好处是可以大幅减少内网通信量。<br>graphx是基于点分割的。</p>
+<h2 id="spark-graphx-cc算法-demo"><a href="#spark-graphx-cc算法-demo" class="headerlink" title="spark-graphx cc算法 demo"></a>spark-graphx cc算法 demo</h2><p>原理就不写了~  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">def main(args: Array[String]): Unit = &#123;</span><br><span class="line">    val source = spark.sparkContext.parallelize(Array(</span><br><span class="line">      (&quot;张三&quot;, &quot;李四&quot;),</span><br><span class="line">      (&quot;张三&quot;, &quot;王五&quot;),</span><br><span class="line">      (&quot;李四&quot;, &quot;王五&quot;),</span><br><span class="line">      (&quot;王五&quot;, &quot;赵六&quot;)</span><br><span class="line">    ))</span><br><span class="line">    //记得cache节点的值或者落数仓，防止spark重复计算</span><br><span class="line">    val nodeRDD = source.flatMap(x=&gt;Array(x._1,x._2)).distinct()</span><br><span class="line">      .zipWithUniqueId().map(x=&gt;(x._1,x._2)).cache()</span><br><span class="line">    println(&quot;--节点--&quot;)</span><br><span class="line">    nodeRDD.foreach(println)</span><br><span class="line">    println(&quot;--边--&quot;)</span><br><span class="line">    val edgeRDD = source.join(nodeRDD).map(x=&gt;(x._2._1,(x._1,x._2._2))).join(nodeRDD)</span><br><span class="line">        .map(x=&gt;(x._2._1._2,x._2._2))</span><br><span class="line">    val graph = Graph.fromEdgeTuples(edgeRDD, 0, Option(PartitionStrategy.EdgePartition2D)</span><br><span class="line">      , StorageLevel.MEMORY_AND_DISK_SER, StorageLevel.MEMORY_AND_DISK_SER)</span><br><span class="line">    val cc = graph.connectedComponents()</span><br><span class="line">    println(&quot;--连通图结果--&quot;)</span><br><span class="line">    cc.vertices.map(x =&gt; (x._1, x._2)).foreach(println)</span><br><span class="line">    spark.stop()</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="强连通图上亿节点的优化"><a href="#强连通图上亿节点的优化" class="headerlink" title="强连通图上亿节点的优化"></a>强连通图上亿节点的优化</h2><p>在日常的图计算中，要是一个节点的数量很多，那么按照spark任务本身的逻辑，多个机器并行执行。会导致节点在不同的机器上复制过多。<br>在数据汇集的时候造成数据倾斜，图算法难以收敛。<br>所以可以进行如下的优化。</p>
+<ol>
+<li>如果是用户和特征的多部图关系，可以先剔除只关联一个用户的特征，这样的特征对于联通图算法是无效数据</li>
+<li>采用fromEdgeTuples的分区策略。由于是点切割，尽量减少节点的复制，减少节点之前的通讯</li>
+<li>利用StorageLevel.MEMORY_AND_DISK_SER防止oom</li>
+<li>将200c4g(根据实际数量)的集群配置修改成32c10g。理由同上</li>
+<li>设置maxIterations次数。（根据需求场景来，风控场景100万节点和子图和10万节点的子图风险其实是差不多的）</li>
+<li>zipWithUniqueId可以根据spark的并行度并行生成id，速度比利用sql row_number要快一些</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/09/10/click-house/" rel="prev" title="click_house">
+      <i class="fa fa-chevron-left"></i> click_house
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#图计算和优化"><span class="nav-number">1.</span> <span class="nav-text">图计算和优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是图计算？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是图计算？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有向图和无向图"><span class="nav-number">1.2.</span> <span class="nav-text">有向图和无向图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#度、出边、入边、出度、入度"><span class="nav-number">1.3.</span> <span class="nav-text">度、出边、入边、出度、入度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超步"><span class="nav-number">1.4.</span> <span class="nav-text">超步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spark-graphx"><span class="nav-number">1.5.</span> <span class="nav-text">spark-graphx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边分割（Edge-Cut）"><span class="nav-number">1.6.</span> <span class="nav-text">边分割（Edge-Cut）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#点分割（Vertex-Cut）"><span class="nav-number">1.7.</span> <span class="nav-text">点分割（Vertex-Cut）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spark-graphx-cc算法-demo"><span class="nav-number">1.8.</span> <span class="nav-text">spark-graphx cc算法 demo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强连通图上亿节点的优化"><span class="nav-number">1.9.</span> <span class="nav-text">强连通图上亿节点的优化</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiasummer1019" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiasummer1019" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  </div>
+
+        
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=[object Object]&web_id=[object Object]"></script>
+  </div>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
