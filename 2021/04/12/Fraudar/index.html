@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="xiasummer1019的博客" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://xiasummer1019.github.io').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="图挖掘算法 FraudarFRAUDAR算法来源于2016年KDD会议，该论文获得了当年的最佳论文奖。该算法要解决的问题是找出站内最善于伪装的虚假账户簇。">
+<meta name="keywords" content="graphMining,图挖掘">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fraudar">
+<meta property="og:url" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;2021&#x2F;04&#x2F;12&#x2F;Fraudar&#x2F;index.html">
+<meta property="og:site_name" content="xiasummer1019的博客">
+<meta property="og:description" content="图挖掘算法 FraudarFRAUDAR算法来源于2016年KDD会议，该论文获得了当年的最佳论文奖。该算法要解决的问题是找出站内最善于伪装的虚假账户簇。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;fraudar&#x2F;a1.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;fraudar&#x2F;a2.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;fraudar&#x2F;a3.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;fraudar&#x2F;a4.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;fraudar&#x2F;a5.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;fraudar&#x2F;a6.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;fraudar&#x2F;a7.jpg">
+<meta property="og:updated_time" content="2021-04-12T13:55:38.883Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;xiasummer1019.github.io&#x2F;img&#x2F;fraudar&#x2F;a1.jpg">
+
+<link rel="canonical" href="https://xiasummer1019.github.io/2021/04/12/Fraudar/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Fraudar | xiasummer1019的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">xiasummer1019的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">菜鸡的成长之路</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiasummer1019.github.io/2021/04/12/Fraudar/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiasummer1019的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Fraudar
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-12 18:24:10 / 修改时间：21:55:38" itemprop="dateCreated datePublished" datetime="2021-04-12T18:24:10+08:00">2021-04-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/graph/" itemprop="url" rel="index">
+                    <span itemprop="name">graph</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="图挖掘算法-Fraudar"><a href="#图挖掘算法-Fraudar" class="headerlink" title="图挖掘算法 Fraudar"></a>图挖掘算法 Fraudar</h1><p>FRAUDAR算法来源于2016年KDD会议，该论文获得了当年的最佳论文奖。<br>该算法要解决的问题是找出站内最善于伪装的虚假账户簇。</p>
+<a id="more"></a> 
+<h2 id="从刷单讲起"><a href="#从刷单讲起" class="headerlink" title="从刷单讲起"></a>从刷单讲起</h2><p>用户可能通过刷单的行为方式刷排名。一般通过虚假设备，虚假地址，空包等方式识别。但是黑产的手段千奇百怪，如何透过现象，从上层的逻辑识别这些用户呢？<br><img src="/img/fraudar/a1.jpg" alt="a1.jpg"></p>
+<h2 id="lockstep"><a href="#lockstep" class="headerlink" title="lockstep"></a>lockstep</h2><p>正常情况下的，是一些热门店铺、商品被好多人购买，而不是一个人买很多的商品。<br><img src="/img/fraudar/a2.jpg" alt="a2.jpg"></p>
+<p>异常状态下，欺诈用户和店铺之间结合的比较隐秘，且和外部联系相对较少。<br><img src="/img/fraudar/a3.jpg" alt="a3.jpg"></p>
+<h2 id="Metric指标"><a href="#Metric指标" class="headerlink" title="Metric指标"></a>Metric指标</h2><p>fraudar是个贪心优化算法，其本质是同过删除图的部分节点，从而最大化全局度量的一个过程。<br>类似机器学习算法，首先我们需要一个类似代价函数的指标对图进行度量。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">        F(S)     F(A)+F(B)</span><br><span class="line">G(S) = ------- = ---------</span><br><span class="line">        |S|      (|A|+|B|)</span><br></pre></td></tr></table></figure>
+<p>F(x)代表节点可疑度，|X|代表节点的数量，A,B代表不同类型的节点。<br>上图中A代表用户，B代表店铺。<br>而节点的可疑度是由所相连的边的可疑度组成。<br>为了区别爆款，和普通店铺、商品。边的可疑度是越多越小，即根据连接数降权。<br>作者根据tf-idf中的降权公式启发，定义边的可疑度为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">susp(e) = 1/log(N+5) //N为连接B类节点的边的数量</span><br></pre></td></tr></table></figure>
+
+<p>所以可疑度：<br><img src="/img/fraudar/a4.jpg" alt="a4.jpg"><br><img src="/img/fraudar/a5.jpg" alt="a5.jpg"></p>
+<p>这样全局可疑度如下：<br><img src="/img/fraudar/a6.jpg" alt="a6.jpg"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">(A0,0.9102392266268373)</span><br><span class="line">(B0,1.8204784532536746)</span><br><span class="line">(A1,1.391137573589825)</span><br><span class="line">(B1,1.4426950408889634)</span><br><span class="line">(A2,1.391137573589825)</span><br><span class="line">(B2,1.8204784532536746)</span><br><span class="line">(A3,1.4941285868276535)</span><br><span class="line">(B3,0.5581106265512472)</span><br><span class="line">(A4,0.5581106265512472)</span><br><span class="line">(B4,0.5581106265512472)</span><br><span class="line">(A5,0.9690179556831694)</span><br><span class="line">(B5,1.0277966847395015)</span><br><span class="line">(A6,0.5138983423697507)</span><br></pre></td></tr></table></figure>
+
+<p>所以平均全局可疑度为：0.555974606556793<br>当不断删除最小可疑度节点后（边的可疑度初始后不变！！）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">A6 0.6120344041435081,</span><br><span class="line">B5 0.6202124092913212,</span><br><span class="line">A5 0.6298773244660093,</span><br><span class="line">B4 0.6494356087222851,</span><br><span class="line">B3 0.7420306825839504,</span><br><span class="line">A3 0.7683049763029081,</span><br><span class="line">B2 0.6722668542650446,</span><br><span class="line">A1 0.5461435359761024,</span><br><span class="line">B0 0.4551196133134186,</span><br><span class="line">A0 0.3034130755422791</span><br></pre></td></tr></table></figure>
+<p><img src="/img/fraudar/a7.jpg" alt="a7.jpg"><br>最终，最大的全局可疑度为：0.7683049763029081</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>由于这个属于公司代码，所以spark版本的修改代码就不能上传了。<br>分布式计算的话，一次性过滤多条数据而不是一条数据，这样可以节约很大的计算量。<br>移除的节点数可以逐层递减。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val c = nodes.count()</span><br><span class="line">val take: Int = if (c &gt; 100000) 10000 else if (c &gt; 10000) 1000 else if (c &gt; 50) c.toInt / 5 else 1</span><br><span class="line">val minNode = nodes.sortBy(_._2).take(take).toMap</span><br><span class="line">e = e.filter(x =&gt; !minNode.contains(x._1) &amp;&amp; !minNode.contains(x._2))</span><br></pre></td></tr></table></figure>
+
+<p>还可以添加多层迭代，这样可以输出多个欺诈子图</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://bhooi.github.io/projects/fraudar/index.html" target="_blank" rel="noopener">原论文链接（有代码）</a><br><a href="https://zhuanlan.zhihu.com/p/82810551" target="_blank" rel="noopener">FRAUDAR : Kdd2016， 二部图挖掘</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/graphMining/" rel="tag"># graphMining</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/03/19/spark-graphx/" rel="prev" title="spark_graphx 优化">
+      <i class="fa fa-chevron-left"></i> spark_graphx 优化
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#图挖掘算法-Fraudar"><span class="nav-number">1.</span> <span class="nav-text">图挖掘算法 Fraudar</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从刷单讲起"><span class="nav-number">1.1.</span> <span class="nav-text">从刷单讲起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lockstep"><span class="nav-number">1.2.</span> <span class="nav-text">lockstep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Metric指标"><span class="nav-number">1.3.</span> <span class="nav-text">Metric指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">1.4.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.5.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiasummer1019" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiasummer1019" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  </div>
+
+        
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=[object Object]&web_id=[object Object]"></script>
+  </div>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
