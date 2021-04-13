@@ -339,6 +339,7 @@ SubClass（子类）被初始化了。。。</code><br>如果用常量的话，�
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
         </div>
           
@@ -482,6 +483,24 @@ SubClass（子类）被初始化了。。。</code><br>如果用常量的话，�
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '699cd53314425d4db2c7',
+      clientSecret: 'c5a30e83805c07d5380a205f2de4d315fb295488',
+      repo: 'xiasummer1019.github.io',
+      owner: 'xiasummer1019',
+      admin: ['xiasummer1019@hotmail.com'],
+      id: '8d015330a743f62d24bb29153bd84162',
+        language: 'zh-CN',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
 
 </body>
 </html>
