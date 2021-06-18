@@ -297,7 +297,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-18 16:37:36" itemprop="dateModified" datetime="2021-06-18T16:37:36+08:00">2021-06-18</time>
+                <time title="修改时间：2021-06-18 16:47:09" itemprop="dateModified" datetime="2021-06-18T16:47:09+08:00">2021-06-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -322,7 +322,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="图计算和优化"><a href="#图计算和优化" class="headerlink" title="图计算和优化"></a>图计算和优化</h1><h2 id="最新更新-20210618"><a href="#最新更新-20210618" class="headerlink" title="最新更新 20210618"></a>最新更新 20210618</h2><p>在最近的图计算优化中，当节点和边的量级都在50亿左右的时候，程序并不能很好的运行，尤其是设置MEMORY_AND_DISK_SER的时候。<br>由于内存资源相对比较紧张，所以总是会出现failed的情况，程序会自动将部分数据缓存到磁盘，但是这样会带来一个问题，改操作会导致当前stage的部分task重试，<br>从而增加当前stage的运行时长。所以可以将边的设为MEMORY_AND_DISK_SER，而点的缓存直接设为MEMORY_ONLY（边占用的大小较大，缓存在内存，点相对较小，直接存磁盘上）。</p>
+          <h1 id="图计算和优化"><a href="#图计算和优化" class="headerlink" title="图计算和优化"></a>图计算和优化</h1><h2 id="最新更新-20210618"><a href="#最新更新-20210618" class="headerlink" title="最新更新 20210618"></a>最新更新 20210618</h2><p>在最近的图计算优化中，当节点和边的量级都在50亿左右的时候，程序并不能很好的运行，尤其是设置MEMORY_AND_DISK_SER的时候。<br>由于内存资源相对比较紧张，所以总是会出现failed的情况，程序会自动将部分数据缓存到磁盘，但是这样会带来一个问题，该操作会导致当前stage的部分task重试，<br>从而增加当前stage的运行时长。所以可以将边的设为MEMORY_AND_DISK_SER，而点的缓存直接设为MEMORY_ONLY（边占用的大小较大，缓存在内存，点相对较小，直接存磁盘上）。</p>
 <h2 id="什么是图计算？"><a href="#什么是图计算？" class="headerlink" title="什么是图计算？"></a>什么是图计算？</h2><p>图是由顶点集合(vertex)及顶点间的关系集合（边edge）组成的一种数据结构。<br>简单来说就是关联关系的抽象，将关系串联起来的一个关系网络。<br>在日常的关系中，类比用户和用户之间的关系，用户和设备之前的关系。<br>例如好友关系如下：  </p>
 <table>
 <thead>
